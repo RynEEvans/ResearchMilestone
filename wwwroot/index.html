@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#153d34">
+  <title>Retail Genie</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Retail Genie home"><span class="brand-mark">R</span> RetailGenie</a>
+    <form class="search" id="search-form" role="search">
+      <label class="sr-only" for="search-input">Search products</label>
+      <span class="search-icon" aria-hidden="true">⌕</span>
+      <input id="search-input" type="search" placeholder="Search products or ask Retail Genie" autocomplete="off">
+      <button type="submit" aria-label="Search products">AI</button>
+    </form>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#shop">Offers</a>
+      <a href="#shop">Rewards</a>
+      <a href="#shop">Orders</a>
+    </nav>
+    <button class="cart-button" id="cart-toggle" type="button" aria-label="Open shopping cart">
+      <span aria-hidden="true">🛒</span><span>Cart · <span id="cart-count">0</span></span>
+    </button>
+  </header>
+  <nav class="browse-bar" aria-label="Browse categories">
+    <span class="browse-label">Browse</span>
+    <div id="category-list" class="category-list"></div>
+    <a class="support-link" href="#footer">Support</a>
+  </nav>
+
+  <main>
+    <section class="shop-section" id="shop" aria-labelledby="shop-title">
+      <div class="section-heading">
+        <div><h1 id="shop-title">Find your next favorite</h1><p class="shop-intro">Thoughtful everyday picks, all in one place.</p></div>
+        <label class="sort-label" for="sort-select">Sort by
+          <select id="sort-select">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price: low to high</option>
+            <option value="price-desc">Price: high to low</option>
+            <option value="rating">Top rated</option>
+          </select>
+        </label>
+      </div>
+      <div class="shop-layout">
+        <div class="catalog">
+          <p class="results-label" id="results-label" aria-live="polite"></p>
+          <div class="product-grid" id="product-grid"></div>
+          <div class="empty-state" id="empty-state" hidden>
+            <span aria-hidden="true">🔎</span><h3>No finds just yet</h3>
+            <p>Try a different search or choose another category.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer"><a class="brand footer-brand" href="/"><span class="brand-mark">R</span> RetailGenie</a><p>Smart finds for everyday life.</p><small>© 2026 Retail Genie · Demo storefront</small></footer>
+
+  <div class="cart-backdrop" id="cart-backdrop" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-hidden="true">
+    <div class="drawer-heading"><div><p class="eyebrow">Your good finds</p><h2 id="cart-title">Shopping cart</h2></div><button type="button" class="close-cart" id="cart-close" aria-label="Close cart">×</button></div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-empty" id="cart-empty"><span aria-hidden="true">🛍</span><p>Your cart is waiting for something lovely.</p><button type="button" id="keep-shopping">Keep shopping</button></div>
+    <div class="cart-summary" id="cart-summary" hidden><div><span>Subtotal</span><strong id="cart-subtotal">$0.00</strong></div><p>Shipping and taxes calculated at checkout.</p><button type="button" class="checkout-button" id="checkout-button">Continue to checkout <span>→</span></button><button type="button" class="clear-cart" id="clear-cart">Clear cart</button></div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>
