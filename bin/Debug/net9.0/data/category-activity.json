@@ -1,51 +1,37 @@
 [
   {
-    "id": "e4485660-dd15-4d0b-aea6-2a582ad8c993",
+    "id": "f712218d-4d01-474d-9dd1-e6310a802df7",
+    "category": "Home",
+    "subcategory": "Cups/Mugs",
+    "source": "product",
+    "clickedAt": "2026-10-09T01:36:02.9114725+00:00"
+  },
+  {
+    "id": "47508387-161c-45b3-b08f-26f7f2840582",
+    "category": "Travel",
+    "subcategory": "Bags \u0026 Backpacks",
+    "source": "product",
+    "clickedAt": "2026-10-09T01:36:04.8706854+00:00"
+  },
+  {
+    "id": "935c2640-20d5-4039-b99e-226c309fab15",
+    "category": "Tech",
+    "subcategory": null,
+    "source": "category",
+    "clickedAt": "2026-10-09T01:36:07.6396284+00:00"
+  },
+  {
+    "id": "f3c32f16-e5da-4cab-8d1d-51eac61adc46",
     "category": "Tech",
     "subcategory": "Audio",
     "source": "product",
-    "clickedAt": "2026-10-09T00:43:46.2664199+00:00"
+    "clickedAt": "2026-10-09T01:36:10.8867052+00:00"
   },
   {
-    "id": "d8366cec-557c-425a-afd6-f2e138ca8430",
-    "category": "Home",
-    "subcategory": "Textiles",
+    "id": "d2d76d4e-1e45-4bdd-a380-f57e4f050bdd",
+    "category": "Tech",
+    "subcategory": "Wearables",
     "source": "product",
-    "clickedAt": "2026-10-09T00:43:48.6782783+00:00"
-  },
-  {
-    "id": "c550aab0-70f6-47ab-aa9f-c2ab016765fb",
-    "category": "Home",
-    "subcategory": "Dining",
-    "source": "product",
-    "clickedAt": "2026-10-09T00:43:51.2436899+00:00"
-  },
-  {
-    "id": "8180b9b7-5a5f-43fa-b3bb-ada5355eb88f",
-    "category": "Fitness",
-    "subcategory": null,
-    "source": "category",
-    "clickedAt": "2026-10-09T00:43:53.8587432+00:00"
-  },
-  {
-    "id": "f0a10a5c-b1ea-4a7d-875c-f89048b80401",
-    "category": "Fitness",
-    "subcategory": "Footwear",
-    "source": "product",
-    "clickedAt": "2026-10-09T00:43:55.6320753+00:00"
-  },
-  {
-    "id": "359a0880-b248-4fdb-ae38-e31380fcb067",
-    "category": "Fitness",
-    "subcategory": "Training",
-    "source": "product",
-    "clickedAt": "2026-10-09T00:43:59.6428323+00:00"
-  },
-  {
-    "id": "ef98ad68-d131-4d9b-9929-8cd5557868ac",
-    "category": "Fitness",
-    "subcategory": "Training",
-    "source": "product",
-    "clickedAt": "2026-10-09T00:44:16.2014494+00:00"
+    "clickedAt": "2026-10-09T01:36:11.7325533+00:00"
   }
 ]

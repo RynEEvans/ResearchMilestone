@@ -19,6 +19,7 @@
     <nav class="main-nav" aria-label="Main navigation">
       <button type="button" id="home-toggle" class="nav-button" aria-current="page">Home</button>
       <button type="button" id="shop-toggle" class="nav-button">Shop</button>
+      <button type="button" id="order-toggle" class="nav-button">Orders</button>
     </nav>
     <button type="button" id="stats-toggle" class="nav-button">Stats</button>
     <button class="account-button" id="account-toggle" type="button" aria-label="View Cappy Demo account">
@@ -50,7 +51,16 @@
           <div><p class="eyebrow">Picked for Cappy Demo</p><h2 id="recommendations-title">Recommended for you</h2></div>
           <button type="button" class="text-link" id="recommendations-shop-button">Shop everything <span aria-hidden="true">→</span></button>
         </div>
-        <div class="product-grid" id="recommendation-grid"></div>
+        <div class="product-grid horizontal-product-row" id="recommendation-grid" aria-label="Recommended products"></div>
+      </section>
+      <section class="recommendations offers-section" aria-labelledby="offers-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">A little something extra</p><h2 id="offers-title">Offers for you</h2></div>
+          <button type="button" class="text-link" id="offers-shop-button">Shop everything <span>→</span></button>
+        </div>
+        <p class="recommendation-note">Sales and special offers picked from categories you enjoy.</p>
+        <div class="product-grid horizontal-product-row" id="offers-grid" aria-label="Products on sale or special offer"></div>
+        <p class="offers-empty" id="offers-empty" hidden>New offers are on their way. Check back soon!</p>
       </section>
     </section>
 
@@ -82,33 +92,88 @@
         </div>
       </div>
     </section>
+    <section id="product-page" class="product-page" aria-labelledby="product-page-title" hidden>
+      <button type="button" id="product-back-button" class="text-link product-back-button">← Back to products</button>
+      <article id="product-detail" class="product-detail"></article>
+    </section>
+    <section id="checkout-page" class="checkout-page" aria-labelledby="checkout-title" hidden>
+      <div class="checkout-heading">
+        <div><p class="eyebrow">Demo checkout</p><h1 id="checkout-title">Delivery details</h1><p>No payment is collected. This demo creates a simulated order only.</p></div>
+        <button type="button" class="text-link" id="checkout-back">← Back to shopping</button>
+      </div>
+      <div class="checkout-layout">
+        <form id="checkout-form" class="checkout-form">
+          <h2>Shipping address</h2>
+          <div class="checkout-fields">
+            <label>Full name<input name="fullName" autocomplete="name" required maxlength="100"></label>
+            <label>Street address<input name="street" autocomplete="street-address" required maxlength="160"></label>
+            <label>City<input name="city" autocomplete="address-level2" required maxlength="80"></label>
+            <label>State / region<input name="region" autocomplete="address-level1" required maxlength="80"></label>
+            <label>ZIP / postal code<input name="postalCode" autocomplete="postal-code" required maxlength="20"></label>
+          </div>
+          <p class="demo-notice">Use sample shipping details only. This demo account and order history are shared; no payment or card details are collected.</p>
+          <button type="submit" class="checkout-button" id="place-order-button">Place demo order</button>
+        </form>
+        <section class="checkout-summary">
+          <h2>Order summary</h2>
+          <div id="checkout-items"></div>
+          <div class="checkout-totals">
+            <div><span>Subtotal</span><strong id="checkout-subtotal">$0.00</strong></div>
+            <div><span>Shipping</span><strong id="checkout-shipping">$0.00</strong></div>
+            <div><span>Estimated tax</span><strong id="checkout-tax">$0.00</strong></div>
+            <div class="checkout-total"><span>Total</span><strong id="checkout-total">$0.00</strong></div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <section id="orders-page" class="orders-page" aria-labelledby="orders-title" hidden>
+      <div class="section-heading orders-heading">
+        <div><p class="eyebrow">Cappy Demo account</p><h1 id="orders-title">Your orders</h1><p class="shop-intro">Track a simulated order or review your order history.</p></div>
+      </div>
+      <form id="tracking-form" class="tracking-form">
+        <label for="tracking-number">Track by order number or tracking number</label>
+        <div><input id="tracking-number" name="trackingNumber" placeholder="RG-… or TRK-…" autocomplete="off" required><button type="submit" class="checkout-button">Track order</button></div>
+      </form>
+      <div class="orders-layout">
+        <section class="order-history-panel" aria-labelledby="order-history-title">
+          <h2 id="order-history-title">Order history</h2>
+          <div id="order-list" class="order-list"></div>
+          <p id="orders-empty" class="orders-empty" hidden>No demo orders yet. Place an order to see it here.</p>
+        </section>
+        <section id="order-detail" class="order-detail" aria-live="polite">
+          <p class="orders-empty">Choose an order or enter a tracking number to see its progress.</p>
+        </section>
+      </div>
+    </section>
     <section id="stats-page" class="stats-page" aria-labelledby="stats-title" hidden>
       <div class="stats-heading">
-        <div><p class="eyebrow">Cappy Demo account</p><h1 id="stats-title">Browsing statistics</h1><p class="shop-intro">See what categories catch your eye.</p></div>
+        <div><p class="eyebrow">Cappy Demo account</p><h1 id="stats-title">Browsing points</h1><p class="shop-intro">Explore categories, products, and purchases to earn points.</p></div>
         <button type="button" class="reset-data-button" id="reset-data">Clear all tracked data</button>
       </div>
       <div class="stats-cards">
         <article class="stat-card"><span>Product add events</span><strong id="stats-product-adds">0</strong></article>
         <article class="stat-card"><span>Product units added</span><strong id="stats-product-units">0</strong></article>
-        <article class="stat-card"><span>Total browse clicks</span><strong id="stats-total-browse-clicks">0</strong></article>
+        <article class="stat-card"><span>Total points</span><strong id="stats-total-points">0</strong></article>
         <article class="stat-card"><span>Categories explored</span><strong id="stats-categories-explored">0</strong></article>
-        <article class="stat-card"><span>Category clicks</span><strong id="stats-category-clicks">0</strong></article>
-        <article class="stat-card"><span>Subcategory clicks</span><strong id="stats-subcategory-clicks">0</strong></article>
-        <article class="stat-card"><span>Product clicks</span><strong id="stats-product-clicks">0</strong></article>
+        <article class="stat-card"><span>Category points</span><strong id="stats-category-points">0</strong></article>
+        <article class="stat-card"><span>Subcategory points</span><strong id="stats-subcategory-points">0</strong></article>
+        <article class="stat-card"><span>Product-view points</span><strong id="stats-product-view-points">0</strong></article>
+        <article class="stat-card"><span>Cart-add points</span><strong id="stats-cart-add-points">0</strong></article>
+        <article class="stat-card"><span>Purchase points</span><strong id="stats-purchase-points">0</strong></article>
       </div>
       <div class="stats-panels">
         <section class="stats-panel chart-panel" aria-labelledby="chart-title">
-          <h2 id="chart-title">Browse interest by category</h2>
-          <p>Category totals include category, subcategory, and product clicks.</p>
+          <h2 id="chart-title">Points by category</h2>
+          <p>Points are weighted by your activity: category 1, product view 2, cart add 3, purchase 4.</p>
           <div class="chart-layout">
-            <div id="category-pie" class="category-pie" role="img" aria-label="No category clicks recorded">
-              <span id="category-pie-total">0<br><small>clicks</small></span>
+            <div id="category-pie" class="category-pie" role="img" aria-label="No category points recorded">
+              <span id="category-pie-total">0<br><small>points</small></span>
             </div>
             <div id="category-legend" class="category-legend"></div>
           </div>
         </section>
         <section class="stats-panel breakdown-panel" aria-labelledby="breakdown-title">
-          <h2 id="breakdown-title">Category breakdown</h2>
+          <h2 id="breakdown-title">Points breakdown</h2>
           <div id="category-breakdown" class="category-breakdown"></div>
         </section>
       </div>

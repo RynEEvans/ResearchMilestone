@@ -1,0 +1,82 @@
+[
+  {
+    "orderNumber": "RG-20261009-20A202",
+    "trackingNumber": "TRK-CCDA25526D20",
+    "accountName": "Cappy Demo",
+    "placedAt": "2026-10-09T01:36:24.3824637+00:00",
+    "estimatedDelivery": "2026-10-14T01:36:24.3824637+00:00",
+    "status": "Delivered",
+    "shippingAddress": {
+      "fullName": "ef",
+      "street": "sad",
+      "city": "sad",
+      "region": "asd",
+      "postalCode": "asd"
+    },
+    "items": [
+      {
+        "productId": 3,
+        "productName": "Insulated Travel Mug",
+        "productIcon": "\u2615",
+        "unitPrice": 24.95,
+        "quantity": 1,
+        "lineTotal": 24.95
+      },
+      {
+        "productId": 2,
+        "productName": "Everyday Backpack",
+        "productIcon": "\uD83C\uDF92",
+        "unitPrice": 49.5,
+        "quantity": 1,
+        "lineTotal": 49.5
+      },
+      {
+        "productId": 1,
+        "productName": "Wireless Headphones",
+        "productIcon": "\uD83C\uDFA7",
+        "unitPrice": 79.99,
+        "quantity": 1,
+        "lineTotal": 79.99
+      },
+      {
+        "productId": 5,
+        "productName": "Smart Fitness Watch",
+        "productIcon": "\u231A",
+        "unitPrice": 119.0,
+        "quantity": 1,
+        "lineTotal": 119.0
+      }
+    ],
+    "subtotal": 273.44,
+    "shipping": 0,
+    "tax": 21.88,
+    "total": 295.32,
+    "statusHistory": [
+      {
+        "status": "Processing",
+        "label": "Order received",
+        "at": "2026-10-09T01:36:24.3824637+00:00"
+      },
+      {
+        "status": "Packed",
+        "label": "Packed and ready",
+        "at": "2026-10-09T01:36:32.6098322+00:00"
+      },
+      {
+        "status": "Shipped",
+        "label": "On the way",
+        "at": "2026-10-09T01:36:35.2955547+00:00"
+      },
+      {
+        "status": "OutForDelivery",
+        "label": "Out for delivery",
+        "at": "2026-10-09T01:36:39.9405189+00:00"
+      },
+      {
+        "status": "Delivered",
+        "label": "Delivered",
+        "at": "2026-10-09T01:36:42.1400587+00:00"
+      }
+    ]
+  }
+]

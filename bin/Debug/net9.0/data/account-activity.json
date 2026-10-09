@@ -1,56 +1,38 @@
 [
   {
-    "id": "b766cca6-057f-4b32-88c0-ed7340d3817e",
+    "id": "e91c5608-f36d-4a6b-b76f-ba74cb8e0500",
+    "productId": 3,
+    "productName": "Insulated Travel Mug",
+    "productIcon": "\u2615",
+    "unitPrice": 24.95,
+    "quantity": 1,
+    "addedAt": "2026-10-09T01:36:02.9067648+00:00"
+  },
+  {
+    "id": "41ce5195-db47-4a58-ad87-ffb2a645556a",
+    "productId": 2,
+    "productName": "Everyday Backpack",
+    "productIcon": "\uD83C\uDF92",
+    "unitPrice": 49.5,
+    "quantity": 1,
+    "addedAt": "2026-10-09T01:36:04.868486+00:00"
+  },
+  {
+    "id": "897f6398-6bd6-48f2-a9ba-50d28b3f60b3",
     "productId": 1,
     "productName": "Wireless Headphones",
     "productIcon": "\uD83C\uDFA7",
     "unitPrice": 79.99,
     "quantity": 1,
-    "addedAt": "2026-10-09T00:43:46.2537914+00:00"
+    "addedAt": "2026-10-09T01:36:10.8846373+00:00"
   },
   {
-    "id": "ed81e9a4-492c-4240-b865-1dfc1f9edd9c",
-    "productId": 6,
-    "productName": "Cotton Throw Blanket",
-    "productIcon": "\uD83E\uDDF6",
-    "unitPrice": 39.0,
+    "id": "7d0e5981-7a0c-4dfe-be26-43854e567fe7",
+    "productId": 5,
+    "productName": "Smart Fitness Watch",
+    "productIcon": "\u231A",
+    "unitPrice": 119.0,
     "quantity": 1,
-    "addedAt": "2026-10-09T00:43:48.6749389+00:00"
-  },
-  {
-    "id": "99c4df56-1bb2-4c2e-87fa-085b34316a98",
-    "productId": 20,
-    "productName": "Stoneware Dinner Set",
-    "productIcon": "\uD83C\uDF7D\uFE0F",
-    "unitPrice": 68.0,
-    "quantity": 1,
-    "addedAt": "2026-10-09T00:43:51.2414377+00:00"
-  },
-  {
-    "id": "23727c79-f6b2-4016-b2a2-c35e508b65a5",
-    "productId": 13,
-    "productName": "Everyday Running Shoes",
-    "productIcon": "\uD83D\uDC5F",
-    "unitPrice": 74.95,
-    "quantity": 1,
-    "addedAt": "2026-10-09T00:43:55.6289216+00:00"
-  },
-  {
-    "id": "fa4d4856-b276-4001-8848-bc41675e891c",
-    "productId": 41,
-    "productName": "Core Exercise Ball",
-    "productIcon": "???",
-    "unitPrice": 23.75,
-    "quantity": 1,
-    "addedAt": "2026-10-09T00:43:59.6395151+00:00"
-  },
-  {
-    "id": "f8cd8a0b-2bd6-41e5-95c1-dcba3cf3ccaf",
-    "productId": 15,
-    "productName": "Resistance Band Set",
-    "productIcon": "\uD83C\uDFCB\uFE0F",
-    "unitPrice": 19.95,
-    "quantity": 1,
-    "addedAt": "2026-10-09T00:44:16.1985975+00:00"
+    "addedAt": "2026-10-09T01:36:11.7307451+00:00"
   }
 ]

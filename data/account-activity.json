@@ -1,65 +1,83 @@
 [
   {
-    "id": "739ae30b-0608-4ffc-b720-4f7b77f4bbb0",
-    "productId": 1,
-    "productName": "Wireless Headphones",
-    "productIcon": "\uD83C\uDFA7",
-    "unitPrice": 79.99,
-    "quantity": 1,
-    "addedAt": "2026-10-09T00:54:53.4472038+00:00"
-  },
-  {
-    "id": "b7e4a7bd-f45d-4383-af6d-03afc4d80ba0",
-    "productId": 5,
-    "productName": "Smart Fitness Watch",
-    "productIcon": "\u231A",
-    "unitPrice": 119.0,
-    "quantity": 1,
-    "addedAt": "2026-10-09T00:54:59.7331228+00:00"
-  },
-  {
-    "id": "00f4b513-a546-4035-8337-2d19c4a56031",
-    "productId": 9,
-    "productName": "USB-C Fast Charger",
-    "productIcon": "\uD83D\uDD0C",
-    "unitPrice": 29.99,
-    "quantity": 1,
-    "addedAt": "2026-10-09T00:55:01.9371723+00:00"
-  },
-  {
-    "id": "a4295992-3ac0-4176-b70e-fbc13320c339",
-    "productId": 10,
-    "productName": "Wireless Mouse",
-    "productIcon": "\uD83D\uDDB1\uFE0F",
-    "unitPrice": 27.5,
-    "quantity": 1,
-    "addedAt": "2026-10-09T00:55:03.4460782+00:00"
-  },
-  {
-    "id": "27c8ce98-4ab0-4318-a9c9-cb96977037de",
+    "id": "e91c5608-f36d-4a6b-b76f-ba74cb8e0500",
     "productId": 3,
     "productName": "Insulated Travel Mug",
     "productIcon": "\u2615",
     "unitPrice": 24.95,
     "quantity": 1,
-    "addedAt": "2026-10-09T00:55:21.4709968+00:00"
+    "addedAt": "2026-10-09T01:36:02.9067648+00:00"
   },
   {
-    "id": "e7f33fd1-87cd-4cf8-8030-0cac824f4684",
-    "productId": 8,
-    "productName": "Ceramic Plant Pot",
-    "productIcon": "\uD83E\uDEB4",
-    "unitPrice": 18.5,
+    "id": "41ce5195-db47-4a58-ad87-ffb2a645556a",
+    "productId": 2,
+    "productName": "Everyday Backpack",
+    "productIcon": "\uD83C\uDF92",
+    "unitPrice": 49.5,
     "quantity": 1,
-    "addedAt": "2026-10-09T00:55:23.7621612+00:00"
+    "addedAt": "2026-10-09T01:36:04.868486+00:00"
   },
   {
-    "id": "49823d53-ec99-4968-ac70-a7512f611c0e",
-    "productId": 21,
-    "productName": "Cedar \u0026 Citrus Candle",
-    "productIcon": "\uD83D\uDD6F\uFE0F",
-    "unitPrice": 21.0,
+    "id": "897f6398-6bd6-48f2-a9ba-50d28b3f60b3",
+    "productId": 1,
+    "productName": "Wireless Headphones",
+    "productIcon": "\uD83C\uDFA7",
+    "unitPrice": 79.99,
     "quantity": 1,
-    "addedAt": "2026-10-09T00:55:25.0514861+00:00"
+    "addedAt": "2026-10-09T01:36:10.8846373+00:00"
+  },
+  {
+    "id": "7d0e5981-7a0c-4dfe-be26-43854e567fe7",
+    "productId": 5,
+    "productName": "Smart Fitness Watch",
+    "productIcon": "\u231A",
+    "unitPrice": 119.0,
+    "quantity": 1,
+    "addedAt": "2026-10-09T01:36:11.7307451+00:00"
+  },
+  {
+    "id": "522c3359-2918-4c63-88e3-a36f5494f3c6",
+    "productId": 6,
+    "productName": "Cotton Throw Blanket",
+    "productIcon": "\uD83E\uDDF6",
+    "unitPrice": 39.0,
+    "quantity": 1,
+    "addedAt": "2026-10-09T01:48:06.2048455+00:00"
+  },
+  {
+    "id": "2b095da2-7ccc-402f-a59b-6b3cf577a167",
+    "productId": 104,
+    "productName": "Canvas Weekend Tote",
+    "productIcon": "??",
+    "unitPrice": 32.0,
+    "quantity": 1,
+    "addedAt": "2026-10-09T01:48:09.3366401+00:00"
+  },
+  {
+    "id": "99f90fba-8dc3-4bfe-bec0-77588ee9c6c4",
+    "productId": 1,
+    "productName": "Wireless Headphones",
+    "productIcon": "\uD83C\uDFA7",
+    "unitPrice": 79.99,
+    "quantity": 1,
+    "addedAt": "2026-10-09T01:48:14.502534+00:00"
+  },
+  {
+    "id": "91a951da-7ec9-4879-bcb9-97673516cac4",
+    "productId": 9,
+    "productName": "USB-C Fast Charger",
+    "productIcon": "\uD83D\uDD0C",
+    "unitPrice": 29.99,
+    "quantity": 1,
+    "addedAt": "2026-10-09T01:48:16.2053523+00:00"
+  },
+  {
+    "id": "f235fc46-0686-473b-9eb3-a01ebc90058f",
+    "productId": 10,
+    "productName": "Wireless Mouse",
+    "productIcon": "\uD83D\uDDB1\uFE0F",
+    "unitPrice": 27.5,
+    "quantity": 1,
+    "addedAt": "2026-10-09T01:48:18.7344403+00:00"
   }
 ]

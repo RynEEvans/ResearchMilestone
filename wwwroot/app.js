@@ -5,8 +5,12 @@ const searchInput = document.querySelector("#search-input");
 const sortSelect = document.querySelector("#sort-select");
 const homePage = document.querySelector("#home-page");
 const shopPage = document.querySelector("#shop-page");
+const productPage = document.querySelector("#product-page");
 const statsPage = document.querySelector("#stats-page");
+const checkoutPage = document.querySelector("#checkout-page");
+const ordersPage = document.querySelector("#orders-page");
 const recommendationGrid = document.querySelector("#recommendation-grid");
+const offersGrid = document.querySelector("#offers-grid");
 const browseBar = document.querySelector(".browse-bar");
 const statsToggle = document.querySelector("#stats-toggle");
 const resultsLabel = document.querySelector("#results-label");
@@ -21,9 +25,12 @@ const cartEmpty = document.querySelector("#cart-empty");
 const cartSummary = document.querySelector("#cart-summary");
 const toast = document.querySelector("#toast");
 
-const state = { category: "All", subcategory: "", search: "", page: 1, products: [], view: "home" };
+const state = { category: "All", subcategory: "", search: "", page: 1, products: [], view: "home", productReturnView: "home", selectedOrderNumber: "" };
 const productsPerPage = 16;
 const money = amount => new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(amount);
+const promotionLabel = promotion => promotion === "Special offer"
+  ? "Buy one, get the second 50% off"
+  : promotion;
 
 async function api(url, options = {}) {
   const response = await fetch(url, {
@@ -106,6 +113,80 @@ async function trackProductClick(productId) {
   await api(`/api/account/product-clicks/${productId}`, { method: "POST" });
 }
 
+async function openProduct(product) {
+  try {
+    await trackProductClick(product.id);
+    if (state.view !== "product") state.productReturnView = state.view;
+    history.pushState({ productReturnView: state.productReturnView }, "", `/?product=${product.id}`);
+    showProduct(product);
+    setPage("product");
+  } catch (error) {
+    showError(error);
+  }
+}
+
+function showProduct(product) {
+  const detail = document.querySelector("#product-detail");
+  detail.replaceChildren();
+  const visual = document.createElement("div");
+  visual.className = "product-detail-visual";
+  visual.style.backgroundColor = ["#f4f7f4", "#edf2ee", "#f1f5f1", "#e9f0eb"][product.id % 4];
+  const icon = document.createElement("span");
+  icon.setAttribute("aria-hidden", "true");
+  icon.textContent = product.icon;
+  visual.append(icon);
+
+  const info = document.createElement("div");
+  info.className = "product-detail-info";
+  const category = document.createElement("p");
+  category.className = "eyebrow";
+  category.textContent = `${product.category} · ${product.subcategory}`;
+  const title = document.createElement("h1");
+  title.id = "product-page-title";
+  title.textContent = product.name;
+  const rating = document.createElement("p");
+  rating.className = "rating";
+  rating.textContent = `★ ${product.rating.toFixed(1)} (${product.reviewCount} reviews)`;
+  const price = document.createElement("p");
+  price.className = `product-detail-price${product.originalPrice ? " sale-price" : ""}`;
+  price.textContent = money(product.price);
+  if (product.originalPrice) {
+    const originalPrice = document.createElement("del");
+    originalPrice.className = "original-price";
+    originalPrice.textContent = money(product.originalPrice);
+    price.append(" ", originalPrice);
+  }
+  const description = document.createElement("p");
+  description.className = "product-detail-description";
+  description.textContent = product.description;
+  const addButton = document.createElement("button");
+  addButton.type = "button";
+  addButton.className = "add-button product-detail-add";
+  addButton.textContent = "Add to cart";
+  addButton.addEventListener("click", () => addToCart(product.id));
+  info.append(category, title, rating);
+  if (product.promotion) {
+    const promotion = document.createElement("span");
+    promotion.className = "promotion-badge product-detail-promotion";
+    promotion.textContent = promotionLabel(product.promotion);
+    info.append(promotion);
+  }
+  info.append(price, description, addButton);
+  detail.append(visual, info);
+}
+
+async function openProductById(productId) {
+  try {
+    const product = await api(`/api/products/${productId}`);
+    showProduct(product);
+    setPage("product");
+  } catch (error) {
+    showError(error);
+    history.replaceState({}, "", "/");
+    setPage("shop");
+  }
+}
+
 function createProductCard(product) {
   const card = document.createElement("article");
   card.className = "product-card";
@@ -113,7 +194,7 @@ function createProductCard(product) {
   visual.type = "button";
   visual.className = "product-visual";
   visual.setAttribute("aria-label", `View ${product.name}`);
-  visual.addEventListener("click", () => trackProductClick(product.id).catch(showError));
+  visual.addEventListener("click", () => openProduct(product));
   visual.style.backgroundColor = ["#f4f7f4", "#edf2ee", "#f1f5f1", "#e9f0eb"][product.id % 4];
   const category = document.createElement("span");
   category.className = "product-category";
@@ -123,6 +204,12 @@ function createProductCard(product) {
   icon.setAttribute("aria-hidden", "true");
   icon.textContent = product.icon;
   visual.append(category, icon);
+  if (product.promotion) {
+    const badge = document.createElement("span");
+    badge.className = "promotion-badge";
+    badge.textContent = promotionLabel(product.promotion);
+    visual.append(badge);
+  }
 
   const details = document.createElement("div");
   details.className = "product-details";
@@ -133,13 +220,20 @@ function createProductCard(product) {
   title.className = "product-title-button";
   title.setAttribute("aria-label", `View ${product.name}`);
   title.textContent = product.name;
-  title.addEventListener("click", () => trackProductClick(product.id).catch(showError));
+  title.addEventListener("click", () => openProduct(product));
   const titleHeading = document.createElement("h3");
   titleHeading.className = "product-title";
   titleHeading.append(title);
   const price = document.createElement("span");
-  price.className = "product-price";
-  price.textContent = money(product.price);
+  price.className = `product-price${product.originalPrice ? " sale-price" : ""}`;
+  const currentPrice = document.createElement("span");
+  currentPrice.textContent = money(product.price);
+  price.append(currentPrice);
+  if (product.originalPrice) {
+    const originalPrice = document.createElement("del");
+    originalPrice.textContent = money(product.originalPrice);
+    price.append(originalPrice);
+  }
   titleRow.append(titleHeading, price);
   const rating = document.createElement("p");
   rating.className = "rating";
@@ -219,17 +313,18 @@ async function loadHomeRecommendations() {
     api("/api/account/stats")
   ]);
   const engagedCategories = stats.categories
-    .filter(category => category.totalClicks > 0)
-    .sort((left, right) => right.totalClicks - left.totalClicks);
+    .filter(category => category.totalPoints > 0)
+    .sort((left, right) => right.totalPoints - left.totalPoints);
+  const regularProducts = products.filter(product => !product.promotion && !product.originalPrice);
   let recommended;
   if (engagedCategories.length === 0) {
-    recommended = getMixedRecommendations(products, 8);
+    recommended = getMixedRecommendations(regularProducts, 8);
     document.querySelector("#recommendation-intro").textContent =
       "A little bit of everything, picked to help you find a new favorite.";
   } else {
     const byCategory = new Map(engagedCategories.map(category => [
       category.name,
-      products.filter(product => product.category === category.name)
+      regularProducts.filter(product => product.category === category.name)
         .sort((left, right) => right.rating - left.rating || left.id - right.id)
     ]));
     recommended = [];
@@ -250,40 +345,64 @@ async function loadHomeRecommendations() {
 
   recommendationGrid.replaceChildren();
   recommended.forEach(product => recommendationGrid.append(createProductCard(product)));
+
+  const offers = products.filter(product => product.promotion || product.originalPrice);
+  const engagedCategoryNames = engagedCategories.map(category => category.name);
+  const categoryOrder = [
+    ...engagedCategoryNames,
+    ...new Set(offers.map(product => product.category).filter(category => !engagedCategoryNames.includes(category)))
+  ];
+  const recommendedOffers = [];
+  categoryOrder.forEach(category => {
+    const categoryOffers = offers.filter(product => product.category === category);
+    const sale = categoryOffers.find(product => product.originalPrice);
+    const special = categoryOffers.find(product => product.promotion && !product.originalPrice);
+    if (sale && recommendedOffers.length < 8) recommendedOffers.push(sale);
+    if (special && recommendedOffers.length < 8) recommendedOffers.push(special);
+  });
+  if (recommendedOffers.length < 8) {
+    getMixedRecommendations(offers.filter(product => !recommendedOffers.includes(product)), 8 - recommendedOffers.length)
+      .forEach(product => recommendedOffers.push(product));
+  }
+  offersGrid.replaceChildren();
+  recommendedOffers.forEach(product => offersGrid.append(createProductCard(product)));
+  document.querySelector("#offers-empty").hidden = recommendedOffers.length > 0;
 }
 
 async function loadStats() {
   const stats = await api("/api/account/stats");
   document.querySelector("#stats-product-adds").textContent = stats.productAddEvents;
   document.querySelector("#stats-product-units").textContent = stats.productsAdded;
-  document.querySelector("#stats-product-clicks").textContent = stats.productClicks;
-  document.querySelector("#stats-total-browse-clicks").textContent = stats.totalBrowseClicks;
+  document.querySelector("#stats-total-points").textContent = stats.totalPoints;
   document.querySelector("#stats-categories-explored").textContent = stats.categoriesExplored;
-  document.querySelector("#stats-category-clicks").textContent = stats.categoryClicks;
-  document.querySelector("#stats-subcategory-clicks").textContent = stats.subcategoryClicks;
+  document.querySelector("#stats-category-points").textContent = stats.categoryPoints;
+  document.querySelector("#stats-subcategory-points").textContent = stats.subcategoryPoints;
+  document.querySelector("#stats-product-view-points").textContent = stats.productViewPoints;
+  document.querySelector("#stats-cart-add-points").textContent = stats.cartAddPoints;
+  document.querySelector("#stats-purchase-points").textContent = stats.purchasePoints;
 
-  const chartCategories = stats.categories.filter(category => category.totalClicks > 0);
-  const totalClicks = chartCategories.reduce((total, category) => total + category.totalClicks, 0);
+  const chartCategories = stats.categories.filter(category => category.totalPoints > 0);
+  const totalPoints = chartCategories.reduce((total, category) => total + category.totalPoints, 0);
   const pie = document.querySelector("#category-pie");
   const colors = ["#17382b", "#456c5c", "#c97845", "#82a092", "#d9a27b", "#5d7868", "#a8bdb2", "#a85c31"];
   let angle = 0;
   const slices = chartCategories.map((category, index) => {
     const start = angle;
-    angle += totalClicks ? category.totalClicks / totalClicks * 360 : 0;
+    angle += totalPoints ? category.totalPoints / totalPoints * 360 : 0;
     return `${colors[index % colors.length]} ${start}deg ${angle}deg`;
   });
-  pie.style.background = totalClicks
+  pie.style.background = totalPoints
     ? `conic-gradient(${slices.join(", ")})`
     : "conic-gradient(#e7eee9 0deg 360deg)";
-  pie.setAttribute("aria-label", totalClicks
-    ? `Category click distribution, ${totalClicks} total clicks`
-    : "No category clicks recorded");
+  pie.setAttribute("aria-label", totalPoints
+    ? `Category point distribution, ${totalPoints} total points`
+    : "No category points recorded");
   document.querySelector("#category-pie-total").replaceChildren(
-    document.createTextNode(String(totalClicks)),
+    document.createTextNode(String(totalPoints)),
     document.createElement("br")
   );
   const pieLabel = document.createElement("small");
-  pieLabel.textContent = "clicks";
+  pieLabel.textContent = "points";
   document.querySelector("#category-pie-total").append(pieLabel);
 
   const legend = document.querySelector("#category-legend");
@@ -297,14 +416,14 @@ async function loadStats() {
     const name = document.createElement("span");
     name.textContent = category.name;
     const count = document.createElement("strong");
-    count.textContent = category.totalClicks;
+    count.textContent = category.totalPoints;
     item.append(swatch, name, count);
     legend.append(item);
   });
   if (!chartCategories.length) {
     const empty = document.createElement("p");
     empty.className = "stats-empty";
-    empty.textContent = "Category clicks will appear here as you browse.";
+    empty.textContent = "Category points will appear here as you browse.";
     legend.append(empty);
   }
 
@@ -316,7 +435,7 @@ async function loadStats() {
     const heading = document.createElement("h3");
     heading.textContent = category.name;
     const total = document.createElement("strong");
-    total.textContent = `${category.totalClicks} total`;
+    total.textContent = `${category.totalPoints} points`;
     const header = document.createElement("div");
     header.className = "breakdown-heading";
     header.append(heading, total);
@@ -324,26 +443,40 @@ async function loadStats() {
     const parentRow = document.createElement("div");
     parentRow.className = "breakdown-row";
     const parentName = document.createElement("span");
-    parentName.textContent = "Category clicks";
+    parentName.textContent = "Category selection points";
     const parentCount = document.createElement("span");
-    parentCount.textContent = category.categoryClicks;
+    parentCount.textContent = category.categoryPoints;
     parentRow.append(parentName, parentCount);
     section.append(parentRow);
     const productRow = document.createElement("div");
     productRow.className = "breakdown-row";
     const productName = document.createElement("span");
-    productName.textContent = "Product clicks";
+    productName.textContent = "Subcategory selection points";
     const productCount = document.createElement("span");
-    productCount.textContent = category.productClicks;
+    productCount.textContent = category.subcategoryPoints;
     productRow.append(productName, productCount);
     section.append(productRow);
+    [
+      ["Product-view points", category.productViewPoints],
+      ["Cart-add points", category.cartAddPoints],
+      ["Purchase points", category.purchasePoints]
+    ].forEach(([label, points]) => {
+      const row = document.createElement("div");
+      row.className = "breakdown-row";
+      const name = document.createElement("span");
+      name.textContent = label;
+      const value = document.createElement("span");
+      value.textContent = points;
+      row.append(name, value);
+      section.append(row);
+    });
     category.subcategories.forEach(subcategory => {
       const row = document.createElement("div");
       row.className = "breakdown-row subcategory-breakdown";
       const name = document.createElement("span");
       name.textContent = subcategory.name;
       const counts = document.createElement("span");
-      counts.textContent = `${subcategory.clicks} category · ${subcategory.productClicks} product`;
+      counts.textContent = `Select ${subcategory.subcategoryPoints} · Views ${subcategory.productViewPoints} · Cart ${subcategory.cartAddPoints} · Purchases ${subcategory.purchasePoints} · Total ${subcategory.totalPoints}`;
       row.append(name, counts);
       section.append(row);
     });
@@ -372,7 +505,12 @@ async function refreshCart() {
     const title = document.createElement("h3");
     title.textContent = item.product.name;
     const quantity = document.createElement("p");
-    quantity.textContent = `${item.quantity} × ${money(item.product.price)}`;
+    quantity.append(`${item.quantity} × ${money(item.product.price)}`);
+    if (item.product.originalPrice) {
+      const originalPrice = document.createElement("del");
+      originalPrice.textContent = ` ${money(item.product.originalPrice)}`;
+      quantity.append(originalPrice);
+    }
     const remove = document.createElement("button");
     remove.type = "button";
     remove.className = "remove-item";
@@ -382,8 +520,188 @@ async function refreshCart() {
     const total = document.createElement("span");
     total.className = "cart-row-total";
     total.textContent = money(item.lineTotal);
+    if (item.savings > 0) {
+      const savings = document.createElement("small");
+      savings.className = "cart-savings";
+      savings.textContent = `Save ${money(item.savings)} · ${promotionLabel(item.product.promotion)}`;
+      total.append(savings);
+    }
     row.append(art, info, total);
     cartItems.append(row);
+  });
+}
+
+async function loadCheckoutSummary() {
+  const cart = await api("/api/cart");
+  if (cart.items.length === 0) {
+    showToast("Add something to your cart before checkout.");
+    setPage("shop");
+    return;
+  }
+
+  const items = document.querySelector("#checkout-items");
+  items.replaceChildren();
+  cart.items.forEach(item => {
+    const row = document.createElement("div");
+    row.className = "checkout-item";
+    const name = document.createElement("span");
+    name.textContent = `${item.product.icon} ${item.product.name} × ${item.quantity}`;
+    const lineTotal = document.createElement("strong");
+    lineTotal.textContent = money(item.lineTotal);
+    if (item.savings > 0) {
+      const savings = document.createElement("small");
+      savings.className = "cart-savings";
+      savings.textContent = `Save ${money(item.savings)} · ${promotionLabel(item.product.promotion)}`;
+      lineTotal.append(document.createElement("br"), savings);
+    }
+    row.append(name, lineTotal);
+    items.append(row);
+  });
+
+  const shipping = cart.subtotal >= 75 ? 0 : 5.99;
+  const tax = Math.round(cart.subtotal * 0.08 * 100) / 100;
+  document.querySelector("#checkout-subtotal").textContent = money(cart.subtotal);
+  document.querySelector("#checkout-shipping").textContent = shipping === 0 ? "Free" : money(shipping);
+  document.querySelector("#checkout-tax").textContent = money(tax);
+  document.querySelector("#checkout-total").textContent = money(cart.subtotal + shipping + tax);
+}
+
+function formatDate(date) {
+  return new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(new Date(date));
+}
+
+async function loadOrders(preferredOrderNumber = state.selectedOrderNumber) {
+  const orders = await api("/api/orders");
+  const orderList = document.querySelector("#order-list");
+  const empty = document.querySelector("#orders-empty");
+  orderList.replaceChildren();
+  empty.hidden = orders.length > 0;
+
+  orders.forEach(order => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `order-list-item${order.orderNumber === preferredOrderNumber ? " selected" : ""}`;
+    const number = document.createElement("strong");
+    number.textContent = order.orderNumber;
+    const summary = document.createElement("span");
+    summary.textContent = `${order.status} · ${money(order.total)}`;
+    const placed = document.createElement("small");
+    placed.textContent = `Placed ${formatDate(order.placedAt)}`;
+    button.append(number, summary, placed);
+    button.addEventListener("click", () => showOrder(order));
+    orderList.append(button);
+  });
+
+  let selected = orders.find(order => order.orderNumber === preferredOrderNumber);
+  if (!selected && orders.length) selected = orders[0];
+  if (selected) showOrder(selected);
+}
+
+function showOrder(order) {
+  state.selectedOrderNumber = order.orderNumber;
+  const detail = document.querySelector("#order-detail");
+  detail.replaceChildren();
+
+  const header = document.createElement("div");
+  header.className = "order-detail-heading";
+  const heading = document.createElement("div");
+  const number = document.createElement("h2");
+  number.textContent = order.orderNumber;
+  const tracking = document.createElement("p");
+  tracking.textContent = `Tracking number: ${order.trackingNumber}`;
+  const expected = document.createElement("p");
+  expected.textContent = `Estimated delivery ${formatDate(order.estimatedDelivery)}`;
+  heading.append(number, tracking, expected);
+  const status = document.createElement("span");
+  status.className = "order-status";
+  status.textContent = order.status === "OutForDelivery" ? "Out for delivery" : order.status;
+  header.append(heading, status);
+  detail.append(header);
+
+  const timeline = document.createElement("ol");
+  timeline.className = "order-timeline";
+  const steps = [
+    ["Processing", "Order received"],
+    ["Packed", "Packed and ready"],
+    ["Shipped", "On the way"],
+    ["OutForDelivery", "Out for delivery"],
+    ["Delivered", "Delivered"]
+  ];
+  const completedStatuses = new Set(order.statusHistory.map(event => event.status));
+  steps.forEach(([key, label]) => {
+    const step = document.createElement("li");
+    step.className = completedStatuses.has(key) ? "complete" : "";
+    const labelText = document.createElement("strong");
+    labelText.textContent = label;
+    const event = order.statusHistory.find(entry => entry.status === key);
+    const time = document.createElement("small");
+    time.textContent = event ? formatDate(event.at) : "Upcoming";
+    step.append(labelText, time);
+    timeline.append(step);
+  });
+  detail.append(timeline);
+
+  const itemHeading = document.createElement("h3");
+  itemHeading.textContent = "Items";
+  detail.append(itemHeading);
+  order.items.forEach(item => {
+    const row = document.createElement("div");
+    row.className = "order-item";
+    const itemName = document.createElement("span");
+    itemName.textContent = `${item.productIcon} ${item.productName} × ${item.quantity}`;
+    const lineTotal = document.createElement("strong");
+    lineTotal.textContent = money(item.lineTotal);
+    if (item.savings > 0) {
+      const savings = document.createElement("small");
+      savings.className = "cart-savings";
+      savings.textContent = `Save ${money(item.savings)} · ${promotionLabel(item.promotion)}`;
+      lineTotal.append(document.createElement("br"), savings);
+    }
+    row.append(itemName, lineTotal);
+    detail.append(row);
+  });
+
+  const address = document.createElement("p");
+  address.className = "order-address";
+  address.textContent = `Delivering to ${order.shippingAddress.fullName}, ${order.shippingAddress.street}, ${order.shippingAddress.city}, ${order.shippingAddress.region} ${order.shippingAddress.postalCode}`;
+  detail.append(address);
+
+  const totals = document.createElement("div");
+  totals.className = "order-totals";
+  [
+    ["Subtotal", order.subtotal],
+    ["Shipping", order.shipping],
+    ["Tax", order.tax],
+    ["Total", order.total]
+  ].forEach(([label, amount]) => {
+    const row = document.createElement("div");
+    const title = document.createElement("span");
+    title.textContent = label;
+    const value = document.createElement("strong");
+    value.textContent = money(amount);
+    row.append(title, value);
+    totals.append(row);
+  });
+  detail.append(totals);
+
+  const advance = document.createElement("button");
+  advance.type = "button";
+  advance.className = "checkout-button advance-order-button";
+  advance.textContent = order.status === "Delivered" ? "Demo order delivered" : "Advance simulated tracking status";
+  advance.disabled = order.status === "Delivered";
+  advance.addEventListener("click", async () => {
+    try {
+      const updated = await api(`/api/orders/${encodeURIComponent(order.orderNumber)}/advance`, { method: "POST" });
+      state.selectedOrderNumber = updated.orderNumber;
+      await loadOrders(updated.orderNumber);
+    } catch (error) {
+      showError(error);
+    }
+  });
+  detail.append(advance);
+  document.querySelector("#tracking-number").value = order.trackingNumber;
+  document.querySelectorAll(".order-list-item").forEach(button => {
+    button.classList.toggle("selected", button.querySelector("strong")?.textContent === order.orderNumber);
   });
 }
 
@@ -462,18 +780,27 @@ function setAccountOpen(open) {
 }
 
 function setPage(view) {
+  if (view !== "product" && new URLSearchParams(location.search).has("product")) {
+    history.replaceState({}, "", "/");
+  }
   state.view = view;
   homePage.hidden = view !== "home";
   shopPage.hidden = view !== "shop";
+  productPage.hidden = view !== "product";
   statsPage.hidden = view !== "stats";
-  browseBar.hidden = view === "stats";
+  checkoutPage.hidden = view !== "checkout";
+  ordersPage.hidden = view !== "orders";
+  browseBar.hidden = ["stats", "checkout", "orders"].includes(view);
   statsToggle.textContent = view === "stats" ? "Back" : "Stats";
   document.querySelector("#home-toggle").setAttribute("aria-current", String(view === "home"));
   document.querySelector("#shop-toggle").setAttribute("aria-current", String(view === "shop"));
+  document.querySelector("#order-toggle").setAttribute("aria-current", String(view === "orders"));
 
   if (view === "home") loadHomeRecommendations().catch(showError);
   if (view === "shop") loadProducts().catch(showError);
   if (view === "stats") loadStats().catch(showError);
+  if (view === "checkout") loadCheckoutSummary().catch(showError);
+  if (view === "orders") loadOrders().catch(showError);
 }
 
 searchForm.addEventListener("submit", event => {
@@ -493,8 +820,15 @@ sortSelect.addEventListener("change", () => {
 });
 document.querySelector("#home-toggle").addEventListener("click", () => setPage("home"));
 document.querySelector("#shop-toggle").addEventListener("click", () => setPage("shop"));
+document.querySelector("#order-toggle").addEventListener("click", () => setPage("orders"));
+document.querySelector("#product-back-button").addEventListener("click", () => {
+  const returnView = state.productReturnView;
+  setPage(returnView === "shop" ? "shop" : "home");
+});
 document.querySelector("#home-shop-button").addEventListener("click", () => setPage("shop"));
 document.querySelector("#recommendations-shop-button").addEventListener("click", () => setPage("shop"));
+document.querySelector("#offers-shop-button").addEventListener("click", () => setPage("shop"));
+document.querySelector("#checkout-back").addEventListener("click", () => setPage("shop"));
 statsToggle.addEventListener("click", () => {
   if (state.view === "stats") {
     setPage(state.previousView || "home");
@@ -553,6 +887,73 @@ document.querySelector("#reset-data").addEventListener("click", async () => {
     showError(error);
   }
 });
-document.querySelector("#checkout-button").addEventListener("click", () => showToast("Checkout is coming soon."));
+document.querySelector("#checkout-button").addEventListener("click", () => {
+  setCartOpen(false);
+  setPage("checkout");
+});
+document.querySelector("#checkout-form").addEventListener("submit", async event => {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const submitButton = document.querySelector("#place-order-button");
+  const formData = new FormData(form);
+  submitButton.disabled = true;
+  try {
+    const order = await api("/api/orders", {
+      method: "POST",
+      body: JSON.stringify({
+        shippingAddress: {
+          fullName: formData.get("fullName"),
+          street: formData.get("street"),
+          city: formData.get("city"),
+          region: formData.get("region"),
+          postalCode: formData.get("postalCode")
+        }
+      })
+    });
+    state.selectedOrderNumber = order.orderNumber;
+    form.reset();
+    await refreshCart();
+    setPage("orders");
+    showToast(`Demo order ${order.orderNumber} placed`);
+  } catch (error) {
+    showError(error);
+  } finally {
+    submitButton.disabled = false;
+  }
+});
+document.querySelector("#tracking-form").addEventListener("submit", async event => {
+  event.preventDefault();
+  const trackingNumber = document.querySelector("#tracking-number").value.trim();
+  try {
+    const order = await api(`/api/orders/track/${encodeURIComponent(trackingNumber)}`);
+    state.selectedOrderNumber = order.orderNumber;
+    showOrder(order);
+    document.querySelectorAll(".order-list-item").forEach(button => {
+      button.classList.toggle("selected", button.querySelector("strong")?.textContent === order.orderNumber);
+    });
+  } catch (error) {
+    showError(error);
+  }
+});
 
-Promise.all([loadCategories(), loadHomeRecommendations(), refreshCart()]).catch(showError);
+window.addEventListener("popstate", event => {
+  const productId = Number(new URLSearchParams(location.search).get("product"));
+  if (Number.isInteger(productId) && productId > 0) {
+    openProductById(productId);
+    return;
+  }
+  const returnView = event.state?.productReturnView || state.productReturnView;
+  setPage(returnView === "shop" ? "shop" : "home");
+});
+
+async function initializeStorefront() {
+  await Promise.all([loadCategories(), refreshCart()]);
+  const productId = Number(new URLSearchParams(location.search).get("product"));
+  if (Number.isInteger(productId) && productId > 0) {
+    await openProductById(productId);
+  } else {
+    await loadHomeRecommendations();
+  }
+}
+
+initializeStorefront().catch(showError);

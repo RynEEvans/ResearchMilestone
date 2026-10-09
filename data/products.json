@@ -4,11 +4,13 @@
     "name": "Wireless Headphones",
     "category": "Tech",
     "subcategory": "Audio",
-    "price": 79.99,
+    "price": 59.99,
     "description": "Comfortable over-ear headphones with rich, balanced sound.",
     "icon": "🎧",
     "rating": 4.7,
-    "reviewCount": 128
+    "reviewCount": 128,
+    "originalPrice": 79.99,
+    "promotion": "25% off"
   },
   {
     "id": 2,
@@ -19,7 +21,9 @@
     "description": "A durable, water-resistant backpack for work and weekends.",
     "icon": "🎒",
     "rating": 4.5,
-    "reviewCount": 86
+    "reviewCount": 86,
+    "originalPrice": null,
+    "promotion": "Special offer"
   },
   {
     "id": 3,
@@ -30,7 +34,9 @@
     "description": "Double-wall stainless steel keeps drinks hot or cold.",
     "icon": "☕",
     "rating": 4.6,
-    "reviewCount": 203
+    "reviewCount": 203,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 4,
@@ -41,7 +47,9 @@
     "description": "Adjustable LED lighting with a clean, modern design.",
     "icon": "💡",
     "rating": 4.3,
-    "reviewCount": 57
+    "reviewCount": 57,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 5,
@@ -52,18 +60,22 @@
     "description": "Track workouts, daily activity, and notifications on the go.",
     "icon": "⌚",
     "rating": 4.4,
-    "reviewCount": 94
+    "reviewCount": 94,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 6,
     "name": "Cotton Throw Blanket",
     "category": "Home",
     "subcategory": "Textiles",
-    "price": 39.0,
+    "price": 35.1,
     "description": "A soft, breathable throw for the sofa or your favorite chair.",
     "icon": "🧶",
     "rating": 4.8,
-    "reviewCount": 172
+    "reviewCount": 172,
+    "originalPrice": 39.0,
+    "promotion": "10% off"
   },
   {
     "id": 7,
@@ -74,7 +86,9 @@
     "description": "Take clear, room-filling sound with you wherever you go.",
     "icon": "🔊",
     "rating": 4.5,
-    "reviewCount": 111
+    "reviewCount": 111,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 8,
@@ -85,7 +99,9 @@
     "description": "A simple glazed planter that brightens up any shelf.",
     "icon": "🪴",
     "rating": 4.2,
-    "reviewCount": 39
+    "reviewCount": 39,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 9,
@@ -96,7 +112,9 @@
     "description": "A compact fast charger for phones, tablets, and everyday devices.",
     "icon": "🔌",
     "rating": 4.6,
-    "reviewCount": 142
+    "reviewCount": 142,
+    "originalPrice": null,
+    "promotion": "Special offer"
   },
   {
     "id": 10,
@@ -107,7 +125,9 @@
     "description": "A comfortable, quiet-click mouse for work or study.",
     "icon": "🖱️",
     "rating": 4.4,
-    "reviewCount": 96
+    "reviewCount": 96,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 11,
@@ -118,7 +138,9 @@
     "description": "A satisfying compact keyboard with tactile switches.",
     "icon": "⌨️",
     "rating": 4.7,
-    "reviewCount": 184
+    "reviewCount": 184,
+    "originalPrice": null,
+    "promotion": "Special offer"
   },
   {
     "id": 12,
@@ -129,18 +151,22 @@
     "description": "A sturdy foldable stand for hands-free viewing.",
     "icon": "📱",
     "rating": 4.3,
-    "reviewCount": 71
+    "reviewCount": 71,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 13,
     "name": "Everyday Running Shoes",
     "category": "Fitness",
     "subcategory": "Footwear",
-    "price": 74.95,
+    "price": 63.71,
     "description": "Lightweight cushioned shoes for walks and daily training.",
     "icon": "👟",
     "rating": 4.5,
-    "reviewCount": 118
+    "reviewCount": 118,
+    "originalPrice": 74.95,
+    "promotion": "15% off"
   },
   {
     "id": 14,
@@ -151,7 +177,9 @@
     "description": "A supportive textured mat for stretching and floor workouts.",
     "icon": "🧘",
     "rating": 4.6,
-    "reviewCount": 156
+    "reviewCount": 156,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 15,
@@ -162,7 +190,9 @@
     "description": "A versatile set of bands for strength and mobility workouts.",
     "icon": "🏋️",
     "rating": 4.4,
-    "reviewCount": 92
+    "reviewCount": 92,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 16,
@@ -173,18 +203,22 @@
     "description": "A leak-resistant bottle built for hikes and active days.",
     "icon": "🥤",
     "rating": 4.5,
-    "reviewCount": 107
+    "reviewCount": 107,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 17,
     "name": "Travel Packing Cubes",
     "category": "Travel",
     "subcategory": "Travel Accessories",
-    "price": 28.99,
+    "price": 23.19,
     "description": "Keep your suitcase neat with a set of lightweight packing cubes.",
     "icon": "🧳",
     "rating": 4.6,
-    "reviewCount": 83
+    "reviewCount": 83,
+    "originalPrice": 28.99,
+    "promotion": "20% off"
   },
   {
     "id": 18,
@@ -195,7 +229,9 @@
     "description": "A compact hard-shell case sized for weekend trips.",
     "icon": "🧳",
     "rating": 4.5,
-    "reviewCount": 65
+    "reviewCount": 65,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 19,
@@ -206,7 +242,9 @@
     "description": "A timeless lightweight frame for sunny days on the go.",
     "icon": "🕶️",
     "rating": 4.2,
-    "reviewCount": 74
+    "reviewCount": 74,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 20,
@@ -217,18 +255,22 @@
     "description": "A coordinated set of durable stoneware for everyday meals.",
     "icon": "🍽️",
     "rating": 4.7,
-    "reviewCount": 131
+    "reviewCount": 131,
+    "originalPrice": null,
+    "promotion": "Special offer"
   },
   {
     "id": 21,
     "name": "Cedar & Citrus Candle",
     "category": "Home",
     "subcategory": "Decor",
-    "price": 21.0,
+    "price": 17.85,
     "description": "A fresh, cozy candle poured in a reusable glass vessel.",
     "icon": "🕯️",
     "rating": 4.6,
-    "reviewCount": 149
+    "reviewCount": 149,
+    "originalPrice": 21.0,
+    "promotion": "15% off"
   },
   {
     "id": 22,
@@ -239,18 +281,22 @@
     "description": "A soft woven accent pillow for a sofa or reading chair.",
     "icon": "🛋️",
     "rating": 4.4,
-    "reviewCount": 58
+    "reviewCount": 58,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 23,
     "name": "Pour-Over Coffee Maker",
     "category": "Kitchen",
     "subcategory": "Coffee & Tea",
-    "price": 36.0,
+    "price": 30.6,
     "description": "A simple glass dripper for a smooth morning brew.",
     "icon": "🫖",
     "rating": 4.8,
-    "reviewCount": 201
+    "reviewCount": 201,
+    "originalPrice": 36.0,
+    "promotion": "15% off"
   },
   {
     "id": 24,
@@ -261,7 +307,9 @@
     "description": "An insulated tumbler with a splash-resistant lid.",
     "icon": "🥛",
     "rating": 4.5,
-    "reviewCount": 122
+    "reviewCount": 122,
+    "originalPrice": null,
+    "promotion": "Special offer"
   },
   {
     "id": 25,
@@ -272,7 +320,9 @@
     "description": "Nestable stainless bowls for prep, mixing, and serving.",
     "icon": "🥣",
     "rating": 4.7,
-    "reviewCount": 88
+    "reviewCount": 88,
+    "originalPrice": null,
+    "promotion": "Special offer"
   },
   {
     "id": 26,
@@ -283,18 +333,22 @@
     "description": "A balanced kitchen knife for everyday chopping and slicing.",
     "icon": "🔪",
     "rating": 4.6,
-    "reviewCount": 97
+    "reviewCount": 97,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 27,
     "name": "Mini Succulent Trio",
     "category": "Garden",
     "subcategory": "Plants",
-    "price": 25.0,
+    "price": 18.75,
     "description": "Three easy-care succulents to bring a little green indoors.",
     "icon": "🌵",
     "rating": 4.5,
-    "reviewCount": 63
+    "reviewCount": 63,
+    "originalPrice": 25.0,
+    "promotion": "25% off"
   },
   {
     "id": 28,
@@ -305,7 +359,9 @@
     "description": "A lightweight daily moisturizer for a soft, comfortable feel.",
     "icon": "🧴",
     "rating": 4.4,
-    "reviewCount": 113
+    "reviewCount": 113,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 29,
@@ -316,7 +372,9 @@
     "description": "Keep pens, notes, and small essentials tidy on your desk.",
     "icon": "🗂️",
     "rating": 4.3,
-    "reviewCount": 47
+    "reviewCount": 47,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 30,
@@ -327,7 +385,9 @@
     "description": "A compact projector for movie nights and shared presentations.",
     "icon": "📽️",
     "rating": 4.5,
-    "reviewCount": 78
+    "reviewCount": 78,
+    "originalPrice": null,
+    "promotion": "Special offer"
   },
   {
     "id": 31,
@@ -338,7 +398,9 @@
     "description": "Made for a simple, comfortable everyday skincare routine.",
     "icon": "??",
     "rating": 4.5,
-    "reviewCount": 191
+    "reviewCount": 191,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 32,
@@ -349,7 +411,9 @@
     "description": "Made for a simple, comfortable everyday skincare routine.",
     "icon": "??",
     "rating": 4.6,
-    "reviewCount": 28
+    "reviewCount": 28,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 33,
@@ -360,18 +424,22 @@
     "description": "Made for a simple, comfortable everyday skincare routine.",
     "icon": "??",
     "rating": 4.7,
-    "reviewCount": 45
+    "reviewCount": 45,
+    "originalPrice": null,
+    "promotion": "Special offer"
   },
   {
     "id": 34,
     "name": "Mineral Sunscreen SPF 30",
     "category": "Beauty",
     "subcategory": "Skincare",
-    "price": 30.0,
+    "price": 27.0,
     "description": "Made for a simple, comfortable everyday skincare routine.",
     "icon": "??",
     "rating": 4.8,
-    "reviewCount": 62
+    "reviewCount": 62,
+    "originalPrice": 30.0,
+    "promotion": "10% off"
   },
   {
     "id": 35,
@@ -382,7 +450,9 @@
     "description": "Comfortable support for daily movement and active days.",
     "icon": "??",
     "rating": 4.2,
-    "reviewCount": 79
+    "reviewCount": 79,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 36,
@@ -393,7 +463,9 @@
     "description": "Comfortable support for daily movement and active days.",
     "icon": "??",
     "rating": 4.3,
-    "reviewCount": 96
+    "reviewCount": 96,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 37,
@@ -404,7 +476,9 @@
     "description": "Comfortable support for daily movement and active days.",
     "icon": "??",
     "rating": 4.4,
-    "reviewCount": 113
+    "reviewCount": 113,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 38,
@@ -415,7 +489,9 @@
     "description": "Comfortable support for daily movement and active days.",
     "icon": "??",
     "rating": 4.5,
-    "reviewCount": 130
+    "reviewCount": 130,
+    "originalPrice": null,
+    "promotion": "Special offer"
   },
   {
     "id": 39,
@@ -426,7 +502,9 @@
     "description": "A versatile workout essential for home or gym sessions.",
     "icon": "???",
     "rating": 4.6,
-    "reviewCount": 147
+    "reviewCount": 147,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 40,
@@ -437,18 +515,22 @@
     "description": "A versatile workout essential for home or gym sessions.",
     "icon": "???",
     "rating": 4.7,
-    "reviewCount": 164
+    "reviewCount": 164,
+    "originalPrice": null,
+    "promotion": "Special offer"
   },
   {
     "id": 41,
     "name": "Core Exercise Ball",
     "category": "Fitness",
     "subcategory": "Training",
-    "price": 23.75,
+    "price": 19.0,
     "description": "A versatile workout essential for home or gym sessions.",
     "icon": "???",
     "rating": 4.8,
-    "reviewCount": 181
+    "reviewCount": 181,
+    "originalPrice": 23.75,
+    "promotion": "20% off"
   },
   {
     "id": 42,
@@ -459,7 +541,9 @@
     "description": "An easy way to add a little greenery to your space.",
     "icon": "??",
     "rating": 4.2,
-    "reviewCount": 198
+    "reviewCount": 198,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 43,
@@ -470,7 +554,9 @@
     "description": "An easy way to add a little greenery to your space.",
     "icon": "??",
     "rating": 4.3,
-    "reviewCount": 35
+    "reviewCount": 35,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 44,
@@ -481,7 +567,9 @@
     "description": "An easy way to add a little greenery to your space.",
     "icon": "??",
     "rating": 4.4,
-    "reviewCount": 52
+    "reviewCount": 52,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 45,
@@ -492,7 +580,9 @@
     "description": "An easy way to add a little greenery to your space.",
     "icon": "??",
     "rating": 4.5,
-    "reviewCount": 69
+    "reviewCount": 69,
+    "originalPrice": null,
+    "promotion": "Special offer"
   },
   {
     "id": 46,
@@ -503,7 +593,9 @@
     "description": "A practical favorite for coffee, tea, and everyday sips.",
     "icon": "?",
     "rating": 4.6,
-    "reviewCount": 86
+    "reviewCount": 86,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 47,
@@ -514,18 +606,22 @@
     "description": "A practical favorite for coffee, tea, and everyday sips.",
     "icon": "?",
     "rating": 4.7,
-    "reviewCount": 103
+    "reviewCount": 103,
+    "originalPrice": null,
+    "promotion": "Special offer"
   },
   {
     "id": 48,
     "name": "Stackable Coffee Cups",
     "category": "Home",
     "subcategory": "Cups/Mugs",
-    "price": 23.0,
+    "price": 20.7,
     "description": "A practical favorite for coffee, tea, and everyday sips.",
     "icon": "?",
     "rating": 4.8,
-    "reviewCount": 120
+    "reviewCount": 120,
+    "originalPrice": 23.0,
+    "promotion": "10% off"
   },
   {
     "id": 49,
@@ -536,7 +632,9 @@
     "description": "A practical favorite for coffee, tea, and everyday sips.",
     "icon": "?",
     "rating": 4.2,
-    "reviewCount": 137
+    "reviewCount": 137,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 50,
@@ -547,7 +645,9 @@
     "description": "A thoughtful accent to bring warmth and character to a room.",
     "icon": "??",
     "rating": 4.3,
-    "reviewCount": 154
+    "reviewCount": 154,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 51,
@@ -558,7 +658,9 @@
     "description": "A thoughtful accent to bring warmth and character to a room.",
     "icon": "??",
     "rating": 4.4,
-    "reviewCount": 171
+    "reviewCount": 171,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 52,
@@ -569,7 +671,9 @@
     "description": "A thoughtful accent to bring warmth and character to a room.",
     "icon": "??",
     "rating": 4.5,
-    "reviewCount": 188
+    "reviewCount": 188,
+    "originalPrice": null,
+    "promotion": "Special offer"
   },
   {
     "id": 53,
@@ -580,7 +684,9 @@
     "description": "A useful table essential for everyday meals and gatherings.",
     "icon": "???",
     "rating": 4.6,
-    "reviewCount": 25
+    "reviewCount": 25,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 54,
@@ -591,18 +697,22 @@
     "description": "A useful table essential for everyday meals and gatherings.",
     "icon": "???",
     "rating": 4.7,
-    "reviewCount": 42
+    "reviewCount": 42,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 55,
     "name": "Everyday Salad Plate Set",
     "category": "Home",
     "subcategory": "Dining",
-    "price": 27.25,
+    "price": 21.8,
     "description": "A useful table essential for everyday meals and gatherings.",
     "icon": "???",
     "rating": 4.8,
-    "reviewCount": 59
+    "reviewCount": 59,
+    "originalPrice": 27.25,
+    "promotion": "20% off"
   },
   {
     "id": 56,
@@ -613,7 +723,9 @@
     "description": "A useful table essential for everyday meals and gatherings.",
     "icon": "???",
     "rating": 4.2,
-    "reviewCount": 76
+    "reviewCount": 76,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 57,
@@ -624,7 +736,9 @@
     "description": "Gentle, useful lighting for a cozy home.",
     "icon": "??",
     "rating": 4.3,
-    "reviewCount": 93
+    "reviewCount": 93,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 58,
@@ -635,7 +749,9 @@
     "description": "Gentle, useful lighting for a cozy home.",
     "icon": "??",
     "rating": 4.4,
-    "reviewCount": 110
+    "reviewCount": 110,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 59,
@@ -646,18 +762,22 @@
     "description": "Gentle, useful lighting for a cozy home.",
     "icon": "??",
     "rating": 4.5,
-    "reviewCount": 127
+    "reviewCount": 127,
+    "originalPrice": null,
+    "promotion": "Special offer"
   },
   {
     "id": 60,
     "name": "Soft Light Wall Sconce",
     "category": "Home",
     "subcategory": "Lighting",
-    "price": 35.5,
+    "price": 26.63,
     "description": "Gentle, useful lighting for a cozy home.",
     "icon": "??",
     "rating": 4.6,
-    "reviewCount": 144
+    "reviewCount": 144,
+    "originalPrice": 35.5,
+    "promotion": "25% off"
   },
   {
     "id": 61,
@@ -668,7 +788,9 @@
     "description": "A soft, versatile fabric essential for home.",
     "icon": "??",
     "rating": 4.7,
-    "reviewCount": 161
+    "reviewCount": 161,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 62,
@@ -679,7 +801,9 @@
     "description": "A soft, versatile fabric essential for home.",
     "icon": "??",
     "rating": 4.8,
-    "reviewCount": 178
+    "reviewCount": 178,
+    "originalPrice": null,
+    "promotion": "Special offer"
   },
   {
     "id": 63,
@@ -690,7 +814,9 @@
     "description": "A soft, versatile fabric essential for home.",
     "icon": "??",
     "rating": 4.2,
-    "reviewCount": 195
+    "reviewCount": 195,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 64,
@@ -701,7 +827,9 @@
     "description": "A handy companion for your daily coffee or tea ritual.",
     "icon": "??",
     "rating": 4.3,
-    "reviewCount": 32
+    "reviewCount": 32,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 65,
@@ -712,7 +840,9 @@
     "description": "A handy companion for your daily coffee or tea ritual.",
     "icon": "??",
     "rating": 4.4,
-    "reviewCount": 49
+    "reviewCount": 49,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 66,
@@ -723,7 +853,9 @@
     "description": "A handy companion for your daily coffee or tea ritual.",
     "icon": "??",
     "rating": 4.5,
-    "reviewCount": 66
+    "reviewCount": 66,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 67,
@@ -734,7 +866,9 @@
     "description": "A handy companion for your daily coffee or tea ritual.",
     "icon": "??",
     "rating": 4.6,
-    "reviewCount": 83
+    "reviewCount": 83,
+    "originalPrice": null,
+    "promotion": "Special offer"
   },
   {
     "id": 68,
@@ -745,18 +879,22 @@
     "description": "Dependable kitchen equipment for everyday cooking.",
     "icon": "??",
     "rating": 4.7,
-    "reviewCount": 100
+    "reviewCount": 100,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 69,
     "name": "Cast Iron Grill Pan",
     "category": "Kitchen",
     "subcategory": "Cookware",
-    "price": 29.25,
+    "price": 23.4,
     "description": "Dependable kitchen equipment for everyday cooking.",
     "icon": "??",
     "rating": 4.8,
-    "reviewCount": 117
+    "reviewCount": 117,
+    "originalPrice": 29.25,
+    "promotion": "20% off"
   },
   {
     "id": 70,
@@ -767,7 +905,9 @@
     "description": "Dependable kitchen equipment for everyday cooking.",
     "icon": "??",
     "rating": 4.2,
-    "reviewCount": 134
+    "reviewCount": 134,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 71,
@@ -778,7 +918,9 @@
     "description": "A practical favorite for coffee, tea, and everyday sips.",
     "icon": "?",
     "rating": 4.3,
-    "reviewCount": 151
+    "reviewCount": 151,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 72,
@@ -789,7 +931,9 @@
     "description": "A practical favorite for coffee, tea, and everyday sips.",
     "icon": "?",
     "rating": 4.4,
-    "reviewCount": 168
+    "reviewCount": 168,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 73,
@@ -800,18 +944,22 @@
     "description": "A practical favorite for coffee, tea, and everyday sips.",
     "icon": "?",
     "rating": 4.5,
-    "reviewCount": 185
+    "reviewCount": 185,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 74,
     "name": "Wide-Lid Smoothie Tumbler",
     "category": "Kitchen",
     "subcategory": "Cups/Mugs",
-    "price": 28.0,
+    "price": 21.0,
     "description": "A practical favorite for coffee, tea, and everyday sips.",
     "icon": "?",
     "rating": 4.6,
-    "reviewCount": 202
+    "reviewCount": 202,
+    "originalPrice": 28.0,
+    "promotion": "25% off"
   },
   {
     "id": 75,
@@ -822,18 +970,22 @@
     "description": "Keep your workspace tidy and daily essentials close at hand.",
     "icon": "???",
     "rating": 4.7,
-    "reviewCount": 39
+    "reviewCount": 39,
+    "originalPrice": null,
+    "promotion": "Special offer"
   },
   {
     "id": 76,
     "name": "Felt Cable Organizer",
     "category": "Office",
     "subcategory": "Organization",
-    "price": 15.5,
+    "price": 13.95,
     "description": "Keep your workspace tidy and daily essentials close at hand.",
     "icon": "???",
     "rating": 4.8,
-    "reviewCount": 56
+    "reviewCount": 56,
+    "originalPrice": 15.5,
+    "promotion": "10% off"
   },
   {
     "id": 77,
@@ -844,7 +996,9 @@
     "description": "Keep your workspace tidy and daily essentials close at hand.",
     "icon": "???",
     "rating": 4.2,
-    "reviewCount": 73
+    "reviewCount": 73,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 78,
@@ -855,7 +1009,9 @@
     "description": "Keep your workspace tidy and daily essentials close at hand.",
     "icon": "???",
     "rating": 4.3,
-    "reviewCount": 90
+    "reviewCount": 90,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 79,
@@ -866,7 +1022,9 @@
     "description": "Reliable hydration for the trail, workout, or commute.",
     "icon": "??",
     "rating": 4.4,
-    "reviewCount": 107
+    "reviewCount": 107,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 80,
@@ -877,7 +1035,9 @@
     "description": "Reliable hydration for the trail, workout, or commute.",
     "icon": "??",
     "rating": 4.5,
-    "reviewCount": 124
+    "reviewCount": 124,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 81,
@@ -888,29 +1048,35 @@
     "description": "Reliable hydration for the trail, workout, or commute.",
     "icon": "??",
     "rating": 4.6,
-    "reviewCount": 141
+    "reviewCount": 141,
+    "originalPrice": null,
+    "promotion": "Special offer"
   },
   {
     "id": 82,
     "name": "Filtered Trail Bottle",
     "category": "Sports & Outdoors",
     "subcategory": "Hydration",
-    "price": 29.0,
+    "price": 24.65,
     "description": "Reliable hydration for the trail, workout, or commute.",
     "icon": "??",
     "rating": 4.7,
-    "reviewCount": 158
+    "reviewCount": 158,
+    "originalPrice": 29.0,
+    "promotion": "15% off"
   },
   {
     "id": 83,
     "name": "Braided USB-C Cable",
     "category": "Tech",
     "subcategory": "Accessories",
-    "price": 14.25,
+    "price": 11.4,
     "description": "A compact, useful addition to your everyday tech kit.",
     "icon": "??",
     "rating": 4.8,
-    "reviewCount": 175
+    "reviewCount": 175,
+    "originalPrice": 14.25,
+    "promotion": "20% off"
   },
   {
     "id": 84,
@@ -921,7 +1087,9 @@
     "description": "A compact, useful addition to your everyday tech kit.",
     "icon": "??",
     "rating": 4.2,
-    "reviewCount": 192
+    "reviewCount": 192,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 85,
@@ -932,7 +1100,9 @@
     "description": "A compact, useful addition to your everyday tech kit.",
     "icon": "??",
     "rating": 4.3,
-    "reviewCount": 29
+    "reviewCount": 29,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 86,
@@ -943,7 +1113,9 @@
     "description": "Enjoy clear, comfortable sound at home or on the go.",
     "icon": "??",
     "rating": 4.4,
-    "reviewCount": 46
+    "reviewCount": 46,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 87,
@@ -954,7 +1126,9 @@
     "description": "Enjoy clear, comfortable sound at home or on the go.",
     "icon": "??",
     "rating": 4.5,
-    "reviewCount": 63
+    "reviewCount": 63,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 88,
@@ -965,7 +1139,9 @@
     "description": "Enjoy clear, comfortable sound at home or on the go.",
     "icon": "??",
     "rating": 4.6,
-    "reviewCount": 80
+    "reviewCount": 80,
+    "originalPrice": null,
+    "promotion": "Special offer"
   },
   {
     "id": 89,
@@ -976,18 +1152,22 @@
     "description": "A comfortable, practical upgrade for your desk setup.",
     "icon": "??",
     "rating": 4.7,
-    "reviewCount": 97
+    "reviewCount": 97,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 90,
     "name": "Ergonomic Wireless Trackball",
     "category": "Tech",
     "subcategory": "Computing",
-    "price": 30.0,
+    "price": 27.0,
     "description": "A comfortable, practical upgrade for your desk setup.",
     "icon": "??",
     "rating": 4.8,
-    "reviewCount": 114
+    "reviewCount": 114,
+    "originalPrice": 30.0,
+    "promotion": "10% off"
   },
   {
     "id": 91,
@@ -998,7 +1178,9 @@
     "description": "A comfortable, practical upgrade for your desk setup.",
     "icon": "??",
     "rating": 4.2,
-    "reviewCount": 131
+    "reviewCount": 131,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 92,
@@ -1009,7 +1191,9 @@
     "description": "Bring more fun to movie nights, gaming, and streaming.",
     "icon": "??",
     "rating": 4.3,
-    "reviewCount": 148
+    "reviewCount": 148,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 93,
@@ -1020,7 +1204,9 @@
     "description": "Bring more fun to movie nights, gaming, and streaming.",
     "icon": "??",
     "rating": 4.4,
-    "reviewCount": 165
+    "reviewCount": 165,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 94,
@@ -1031,18 +1217,22 @@
     "description": "Bring more fun to movie nights, gaming, and streaming.",
     "icon": "??",
     "rating": 4.5,
-    "reviewCount": 182
+    "reviewCount": 182,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 95,
     "name": "Compact Webcam",
     "category": "Tech",
     "subcategory": "Entertainment",
-    "price": 51.75,
+    "price": 43.99,
     "description": "Bring more fun to movie nights, gaming, and streaming.",
     "icon": "??",
     "rating": 4.6,
-    "reviewCount": 199
+    "reviewCount": 199,
+    "originalPrice": 51.75,
+    "promotion": "15% off"
   },
   {
     "id": 96,
@@ -1053,18 +1243,22 @@
     "description": "Stay connected with helpful tools for your everyday routine.",
     "icon": "?",
     "rating": 4.7,
-    "reviewCount": 36
+    "reviewCount": 36,
+    "originalPrice": null,
+    "promotion": "Special offer"
   },
   {
     "id": 97,
     "name": "Classic Smartwatch Band",
     "category": "Tech",
     "subcategory": "Wearables",
-    "price": 43.25,
+    "price": 34.6,
     "description": "Stay connected with helpful tools for your everyday routine.",
     "icon": "?",
     "rating": 4.8,
-    "reviewCount": 53
+    "reviewCount": 53,
+    "originalPrice": 43.25,
+    "promotion": "20% off"
   },
   {
     "id": 98,
@@ -1075,7 +1269,9 @@
     "description": "Stay connected with helpful tools for your everyday routine.",
     "icon": "?",
     "rating": 4.2,
-    "reviewCount": 70
+    "reviewCount": 70,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 99,
@@ -1086,7 +1282,9 @@
     "description": "Stay connected with helpful tools for your everyday routine.",
     "icon": "?",
     "rating": 4.3,
-    "reviewCount": 87
+    "reviewCount": 87,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 100,
@@ -1097,7 +1295,9 @@
     "description": "A compact, useful addition to your everyday tech kit.",
     "icon": "??",
     "rating": 4.4,
-    "reviewCount": 104
+    "reviewCount": 104,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 101,
@@ -1108,7 +1308,9 @@
     "description": "A compact, useful addition to your everyday tech kit.",
     "icon": "??",
     "rating": 4.5,
-    "reviewCount": 121
+    "reviewCount": 121,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 102,
@@ -1119,29 +1321,35 @@
     "description": "A compact, useful addition to your everyday tech kit.",
     "icon": "??",
     "rating": 4.6,
-    "reviewCount": 138
+    "reviewCount": 138,
+    "originalPrice": null,
+    "promotion": "Special offer"
   },
   {
     "id": 103,
     "name": "Universal Travel Adapter",
     "category": "Travel",
     "subcategory": "Accessories",
-    "price": 24.75,
+    "price": 18.56,
     "description": "A compact, useful addition to your everyday tech kit.",
     "icon": "??",
     "rating": 4.7,
-    "reviewCount": 155
+    "reviewCount": 155,
+    "originalPrice": 24.75,
+    "promotion": "25% off"
   },
   {
     "id": 104,
     "name": "Canvas Weekend Tote",
     "category": "Travel",
     "subcategory": "Bags & Backpacks",
-    "price": 32.0,
+    "price": 28.8,
     "description": "Carry daily essentials comfortably wherever you go.",
     "icon": "??",
     "rating": 4.8,
-    "reviewCount": 172
+    "reviewCount": 172,
+    "originalPrice": 32.0,
+    "promotion": "10% off"
   },
   {
     "id": 105,
@@ -1152,7 +1360,9 @@
     "description": "Carry daily essentials comfortably wherever you go.",
     "icon": "??",
     "rating": 4.2,
-    "reviewCount": 189
+    "reviewCount": 189,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 106,
@@ -1163,7 +1373,9 @@
     "description": "Carry daily essentials comfortably wherever you go.",
     "icon": "??",
     "rating": 4.3,
-    "reviewCount": 26
+    "reviewCount": 26,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 107,
@@ -1174,7 +1386,9 @@
     "description": "Carry daily essentials comfortably wherever you go.",
     "icon": "??",
     "rating": 4.4,
-    "reviewCount": 43
+    "reviewCount": 43,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 108,
@@ -1185,7 +1399,9 @@
     "description": "A dependable travel bag for weekends and longer trips.",
     "icon": "??",
     "rating": 4.5,
-    "reviewCount": 60
+    "reviewCount": 60,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 109,
@@ -1196,7 +1412,9 @@
     "description": "A dependable travel bag for weekends and longer trips.",
     "icon": "??",
     "rating": 4.6,
-    "reviewCount": 77
+    "reviewCount": 77,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 110,
@@ -1207,18 +1425,22 @@
     "description": "A dependable travel bag for weekends and longer trips.",
     "icon": "??",
     "rating": 4.7,
-    "reviewCount": 94
+    "reviewCount": 94,
+    "originalPrice": null,
+    "promotion": "Special offer"
   },
   {
     "id": 111,
     "name": "Hard-Shell Spinner Case",
     "category": "Travel",
     "subcategory": "Luggage",
-    "price": 81.75,
+    "price": 69.49,
     "description": "A dependable travel bag for weekends and longer trips.",
     "icon": "??",
     "rating": 4.8,
-    "reviewCount": 111
+    "reviewCount": 111,
+    "originalPrice": 81.75,
+    "promotion": "15% off"
   },
   {
     "id": 112,
@@ -1229,7 +1451,9 @@
     "description": "Make your next trip more comfortable and organized.",
     "icon": "??",
     "rating": 4.2,
-    "reviewCount": 128
+    "reviewCount": 128,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 113,
@@ -1240,7 +1464,9 @@
     "description": "Make your next trip more comfortable and organized.",
     "icon": "??",
     "rating": 4.3,
-    "reviewCount": 145
+    "reviewCount": 145,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 114,
@@ -1251,7 +1477,9 @@
     "description": "Make your next trip more comfortable and organized.",
     "icon": "??",
     "rating": 4.4,
-    "reviewCount": 162
+    "reviewCount": 162,
+    "originalPrice": null,
+    "promotion": null
   },
   {
     "id": 115,
@@ -1262,6 +1490,8 @@
     "description": "Make your next trip more comfortable and organized.",
     "icon": "??",
     "rating": 4.5,
-    "reviewCount": 179
+    "reviewCount": 179,
+    "originalPrice": null,
+    "promotion": "Special offer"
   }
 ]
