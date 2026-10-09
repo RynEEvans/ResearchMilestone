@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#153d34">
+  <meta name="theme-color" content="#17382B">
   <title>Retail Genie</title>
   <link rel="stylesheet" href="/styles.css">
 </head>
@@ -21,6 +21,10 @@
       <a href="#shop">Rewards</a>
       <a href="#shop">Orders</a>
     </nav>
+    <button type="button" id="stats-toggle" class="nav-button">Stats</button>
+    <button class="account-button" id="account-toggle" type="button" aria-label="View Cappy Demo account">
+      <span class="account-avatar" aria-hidden="true">C</span><span>Cappy Demo</span>
+    </button>
     <button class="cart-button" id="cart-toggle" type="button" aria-label="Open shopping cart">
       <span aria-hidden="true">🛒</span><span>Cart · <span id="cart-count">0</span></span>
     </button>
@@ -55,11 +59,63 @@
         </div>
       </div>
     </section>
+    <section id="stats-page" class="stats-page" aria-labelledby="stats-title" hidden>
+      <div class="stats-heading">
+        <div><p class="eyebrow">Cappy Demo account</p><h1 id="stats-title">Browsing statistics</h1><p class="shop-intro">See what categories catch your eye.</p></div>
+        <button type="button" class="reset-data-button" id="reset-data">Clear all tracked data</button>
+      </div>
+      <div class="stats-cards">
+        <article class="stat-card"><span>Product add events</span><strong id="stats-product-adds">0</strong></article>
+        <article class="stat-card"><span>Product units added</span><strong id="stats-product-units">0</strong></article>
+        <article class="stat-card"><span>Total browse clicks</span><strong id="stats-total-browse-clicks">0</strong></article>
+        <article class="stat-card"><span>Categories explored</span><strong id="stats-categories-explored">0</strong></article>
+        <article class="stat-card"><span>Category clicks</span><strong id="stats-category-clicks">0</strong></article>
+        <article class="stat-card"><span>Subcategory clicks</span><strong id="stats-subcategory-clicks">0</strong></article>
+        <article class="stat-card"><span>Product clicks</span><strong id="stats-product-clicks">0</strong></article>
+      </div>
+      <div class="stats-panels">
+        <section class="stats-panel chart-panel" aria-labelledby="chart-title">
+          <h2 id="chart-title">Browse interest by category</h2>
+          <p>Category totals include category, subcategory, and product clicks.</p>
+          <div class="chart-layout">
+            <div id="category-pie" class="category-pie" role="img" aria-label="No category clicks recorded">
+              <span id="category-pie-total">0<br><small>clicks</small></span>
+            </div>
+            <div id="category-legend" class="category-legend"></div>
+          </div>
+        </section>
+        <section class="stats-panel breakdown-panel" aria-labelledby="breakdown-title">
+          <h2 id="breakdown-title">Category breakdown</h2>
+          <div id="category-breakdown" class="category-breakdown"></div>
+        </section>
+      </div>
+    </section>
   </main>
 
   <footer id="footer"><a class="brand footer-brand" href="/"><span class="brand-mark">R</span> RetailGenie</a><p>Smart finds for everyday life.</p><small>© 2026 Retail Genie · Demo storefront</small></footer>
 
   <div class="cart-backdrop" id="cart-backdrop" hidden></div>
+  <div class="cart-backdrop account-backdrop" id="account-backdrop" hidden></div>
+  <aside class="account-drawer" id="account-drawer" aria-labelledby="account-title" aria-hidden="true">
+    <div class="drawer-heading">
+      <div><p class="eyebrow">Your Retail Genie account</p><h2 id="account-title">Cappy Demo</h2></div>
+      <button type="button" class="close-cart" id="account-close" aria-label="Close account">×</button>
+    </div>
+    <div class="account-overview">
+      <p>This demo account is ready to use. No login required.</p>
+      <div class="account-stats">
+        <div><strong id="account-add-events">0</strong><span>Add events</span></div>
+        <div><strong id="account-products-added">0</strong><span>Products added</span></div>
+      </div>
+    </div>
+    <section class="activity-section" aria-labelledby="activity-title">
+      <h3 id="activity-title">Cart activity</h3>
+      <p class="activity-note">Every add is saved here, even after an item is removed from your cart.</p>
+      <div class="activity-list" id="activity-list"></div>
+      <div class="activity-empty" id="activity-empty">No products added yet. Your additions will appear here.</div>
+    </section>
+  </aside>
+
   <aside class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-hidden="true">
     <div class="drawer-heading"><div><p class="eyebrow">Your good finds</p><h2 id="cart-title">Shopping cart</h2></div><button type="button" class="close-cart" id="cart-close" aria-label="Close cart">×</button></div>
     <div class="cart-items" id="cart-items"></div>

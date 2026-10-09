@@ -15,7 +15,6 @@ C:\Users\bluef\OneDrive\Documents\GitHub\ResearchMilestone\obj\Debug\net9.0\rjim
 C:\Users\bluef\OneDrive\Documents\GitHub\ResearchMilestone\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Users\bluef\OneDrive\Documents\GitHub\ResearchMilestone\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
 C:\Users\bluef\OneDrive\Documents\GitHub\ResearchMilestone\obj\Debug\net9.0\scopedcss\bundle\ResearchMilestone.styles.css
-C:\Users\bluef\OneDrive\Documents\GitHub\ResearchMilestone\obj\Debug\net9.0\compressed\hadrox98xa-ptte585429.gz
 C:\Users\bluef\OneDrive\Documents\GitHub\ResearchMilestone\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\bluef\OneDrive\Documents\GitHub\ResearchMilestone\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Users\bluef\OneDrive\Documents\GitHub\ResearchMilestone\obj\Debug\net9.0\staticwebassets.development.json
@@ -25,5 +24,10 @@ C:\Users\bluef\OneDrive\Documents\GitHub\ResearchMilestone\obj\Debug\net9.0\refi
 C:\Users\bluef\OneDrive\Documents\GitHub\ResearchMilestone\obj\Debug\net9.0\ResearchMilestone.pdb
 C:\Users\bluef\OneDrive\Documents\GitHub\ResearchMilestone\obj\Debug\net9.0\ResearchMilestone.genruntimeconfig.cache
 C:\Users\bluef\OneDrive\Documents\GitHub\ResearchMilestone\obj\Debug\net9.0\ref\ResearchMilestone.dll
-C:\Users\bluef\OneDrive\Documents\GitHub\ResearchMilestone\obj\Debug\net9.0\compressed\2xu8tpv6jp-gx8wdzc9ec.gz
-C:\Users\bluef\OneDrive\Documents\GitHub\ResearchMilestone\obj\Debug\net9.0\compressed\kirdg19kml-zcy41qg290.gz
+C:\Users\bluef\OneDrive\Documents\GitHub\ResearchMilestone\obj\Debug\net9.0\ResearchMilestone.sourcelink.json
+C:\Users\bluef\OneDrive\Documents\GitHub\ResearchMilestone\bin\Debug\net9.0\data\products.json
+C:\Users\bluef\OneDrive\Documents\GitHub\ResearchMilestone\bin\Debug\net9.0\data\account-activity.json
+C:\Users\bluef\OneDrive\Documents\GitHub\ResearchMilestone\bin\Debug\net9.0\data\category-activity.json
+C:\Users\bluef\OneDrive\Documents\GitHub\ResearchMilestone\obj\Debug\net9.0\compressed\hadrox98xa-w1jczjeah4.gz
+C:\Users\bluef\OneDrive\Documents\GitHub\ResearchMilestone\obj\Debug\net9.0\compressed\2xu8tpv6jp-oe7z0ormao.gz
+C:\Users\bluef\OneDrive\Documents\GitHub\ResearchMilestone\obj\Debug\net9.0\compressed\kirdg19kml-vxcwa4577j.gz

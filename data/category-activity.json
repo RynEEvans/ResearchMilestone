@@ -1,0 +1,51 @@
+[
+  {
+    "id": "e4485660-dd15-4d0b-aea6-2a582ad8c993",
+    "category": "Tech",
+    "subcategory": "Audio",
+    "source": "product",
+    "clickedAt": "2026-10-09T00:43:46.2664199+00:00"
+  },
+  {
+    "id": "d8366cec-557c-425a-afd6-f2e138ca8430",
+    "category": "Home",
+    "subcategory": "Textiles",
+    "source": "product",
+    "clickedAt": "2026-10-09T00:43:48.6782783+00:00"
+  },
+  {
+    "id": "c550aab0-70f6-47ab-aa9f-c2ab016765fb",
+    "category": "Home",
+    "subcategory": "Dining",
+    "source": "product",
+    "clickedAt": "2026-10-09T00:43:51.2436899+00:00"
+  },
+  {
+    "id": "8180b9b7-5a5f-43fa-b3bb-ada5355eb88f",
+    "category": "Fitness",
+    "subcategory": null,
+    "source": "category",
+    "clickedAt": "2026-10-09T00:43:53.8587432+00:00"
+  },
+  {
+    "id": "f0a10a5c-b1ea-4a7d-875c-f89048b80401",
+    "category": "Fitness",
+    "subcategory": "Footwear",
+    "source": "product",
+    "clickedAt": "2026-10-09T00:43:55.6320753+00:00"
+  },
+  {
+    "id": "359a0880-b248-4fdb-ae38-e31380fcb067",
+    "category": "Fitness",
+    "subcategory": "Training",
+    "source": "product",
+    "clickedAt": "2026-10-09T00:43:59.6428323+00:00"
+  },
+  {
+    "id": "ef98ad68-d131-4d9b-9929-8cd5557868ac",
+    "category": "Fitness",
+    "subcategory": "Training",
+    "source": "product",
+    "clickedAt": "2026-10-09T00:44:16.2014494+00:00"
+  }
+]
