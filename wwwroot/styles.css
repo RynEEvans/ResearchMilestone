@@ -34,8 +34,10 @@ button { color: inherit; }
 .search button { height: 28px; min-width: 66px; margin-right: 4px; border: 0; border-radius: 16px; background: #f8eee7; color: var(--copper); cursor: pointer; font-size: 11px; font-weight: 700; }
 .search button:hover { background: #f3e3d8; }
 .main-nav { display: flex; align-items: center; gap: clamp(16px, 3.6vw, 45px); }
-.main-nav a, .support-link { color: var(--ink); text-decoration: none; font-size: 11px; font-weight: 700; white-space: nowrap; }
-.main-nav a:hover, .support-link:hover { color: var(--accent); }
+.main-nav a, .main-nav .nav-button, .support-link { color: var(--ink); text-decoration: none; font-size: 11px; font-weight: 700; white-space: nowrap; }
+.main-nav a:hover, .main-nav .nav-button:hover, .support-link:hover { color: var(--accent); }
+.main-nav .nav-button { padding: 7px 2px; }
+.nav-button[aria-current="true"] { color: var(--copper); }
 .nav-button { border: 0; padding: 7px 2px; background: transparent; color: var(--evergreen); cursor: pointer; font-size: 11px; font-weight: 700; white-space: nowrap; }
 .nav-button:hover { color: var(--copper); }
 .account-button { border: 0; background: transparent; color: var(--ink); cursor: pointer; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 11px; white-space: nowrap; }
@@ -47,9 +49,30 @@ button { color: inherit; }
 .browse-label { color: var(--ink); font-weight: 700; font-size: 10px; }
 .support-link { margin-left: auto; font-size: 10px; }
 
-.shop-section { max-width: 1390px; min-height: calc(100vh - 150px); margin: 0 auto; padding: 22px max(4.5vw, 20px) 75px; background: var(--cream); }
+.home-page, .shop-section { max-width: 1390px; min-height: calc(100vh - 150px); margin: 0 auto; padding: 22px max(4.5vw, 20px) 75px; background: var(--cream); }
+.home-page[hidden], .shop-section[hidden], .stats-page[hidden], .browse-bar[hidden] { display: none; }
+.home-hero { min-height: 255px; display: grid; grid-template-columns: minmax(0, 1fr) 280px; align-items: center; gap: 24px; padding: 31px clamp(24px, 6vw, 76px); border-radius: 16px; background: linear-gradient(110deg, #eaf1ec, #f5eee6); overflow: hidden; }
+.home-hero-copy { max-width: 610px; }
+.home-hero-copy .eyebrow { margin-bottom: 8px; }
+.home-hero h1 { margin: 0; color: var(--forest); font-size: clamp(30px, 4vw, 45px); line-height: 1.15; letter-spacing: -1.2px; }
+.home-hero-copy > p:not(.eyebrow) { max-width: 500px; margin: 11px 0 19px; color: var(--muted); font-size: 13px; line-height: 1.65; }
+.home-shop-button { border: 0; border-radius: 8px; padding: 12px 16px; background: var(--forest); color: white; cursor: pointer; font-size: 11px; font-weight: 700; }
+.home-shop-button:hover { background: var(--evergreen); }
+.home-shop-button span { padding-left: 8px; }
+.home-hero-art { position: relative; width: 215px; height: 190px; justify-self: center; display: grid; place-items: center; border-radius: 50%; background: #dbe7df; }
+.home-hero-art::before { content: ""; position: absolute; inset: 17px; border: 1px solid #ffffffb8; border-radius: 50%; }
+.home-hero-art > strong { position: relative; font-size: 88px; filter: drop-shadow(0 10px 8px #17382b20); }
+.home-hero-art > span { position: absolute; top: 19px; right: 27px; z-index: 1; color: var(--copper); font-size: 23px; }
+.recommendations { padding-top: 36px; }
+.recommendations .section-heading { align-items: end; }
+.recommendations .eyebrow { margin: 0 0 5px; }
+.recommendations h2 { margin: 0; color: var(--ink); font-size: 24px; }
+.text-link { border: 0; padding: 5px 0; background: transparent; color: var(--evergreen); cursor: pointer; font-size: 11px; font-weight: 700; }
+.text-link:hover { color: var(--copper); }
+.text-link span { padding-left: 5px; }
+.recommendation-note { color: var(--muted); font-size: 11px; margin: 8px 0 14px; }
+.shop-section { min-height: calc(100vh - 150px); }
 .stats-page { max-width: 1390px; min-height: calc(100vh - 150px); margin: 0 auto; padding: 30px max(4.5vw, 20px) 75px; background: var(--cream); }
-.stats-page[hidden], .shop-section[hidden], .browse-bar[hidden] { display: none; }
 .stats-heading { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 24px; }
 .stats-heading .eyebrow { margin-bottom: 6px; }
 .stats-heading h1 { margin: 0; font-size: 29px; }
@@ -98,11 +121,16 @@ button { color: inherit; }
 .category-button-sub.active { background: var(--forest); border-color: var(--forest); color: white; }
 .category-button-sub.active::before { color: white; }
 .results-label { font-size: 11px; color: var(--muted); margin: 0 0 13px; }
+.pagination { display: flex; justify-content: center; align-items: center; gap: 20px; padding-top: 32px; color: var(--muted); font-size: 11px; }
+.pagination[hidden] { display: none; }
+.page-button { min-width: 108px; border: 1px solid var(--line); border-radius: 7px; padding: 10px 13px; background: white; color: var(--forest); cursor: pointer; font-size: 11px; font-weight: 700; }
+.page-button:hover:not(:disabled) { border-color: var(--forest); background: var(--forest); color: white; }
+.page-button:disabled { cursor: not-allowed; opacity: .45; }
 .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
 .product-card { min-width: 0; padding: 10px; border: 1px solid var(--line); border-radius: 15px; background: white; transition: box-shadow .18s ease, transform .18s ease; }
 .product-card:hover { transform: translateY(-2px); box-shadow: 0 8px 22px #17382b10; }
 .product-visual { height: 174px; border-radius: 11px; background: #f2f5f1; display: grid; place-items: center; position: relative; overflow: hidden; }
-.product-visual { width: 100%; padding: 0; border: 0; color: inherit; cursor: pointer; }
+.product-visual { width: 100%; padding: 0; border: 0; color: inherit; cursor: pointer; font: inherit; }
 .product-visual::before { content: ""; position: absolute; width: 125px; height: 125px; border: 1px solid #ffffffb0; border-radius: 50%; }
 .product-visual .product-icon { font-size: 69px; z-index: 1; filter: drop-shadow(0 8px 8px #32405417); transition: transform .25s ease; }
 .product-card:hover .product-icon { transform: translateY(-4px) scale(1.06); }
@@ -179,6 +207,7 @@ footer small { font-size: 9px; }
   .shop-section { padding-inline: 24px; }
   .stats-page { padding-inline: 24px; }
   .chart-layout { grid-template-columns: minmax(120px, 175px) 1fr; gap: 14px; }
+  .home-page { padding-inline: 24px; }
 }
 @media (max-width: 600px) {
   .site-header { min-height: 57px; padding-inline: 12px; gap: 10px; }
@@ -188,7 +217,8 @@ footer small { font-size: 9px; }
   .search input { min-width: 0; padding-inline: 6px; font-size: 10px; }
   .search button { min-width: 38px; font-size: 9px; }
   .search-icon { font-size: 19px; }
-  .main-nav { display: none; }
+  .main-nav { gap: 8px; }
+  .main-nav .nav-button { font-size: 9px; }
   .nav-button { font-size: 10px; }
   .account-button { gap: 0; font-size: 0; }
   .account-avatar { width: 28px; height: 28px; font-size: 12px; }
@@ -200,6 +230,17 @@ footer small { font-size: 9px; }
   .category-list { gap: 6px; }
   .category-button { min-width: auto; padding-inline: 11px; font-size: 9px; }
   .shop-section { padding: 22px 14px 55px; }
+  .home-page { padding: 17px 14px 50px; }
+  .home-hero { min-height: 220px; grid-template-columns: minmax(0, 1fr) 95px; gap: 4px; padding: 20px 15px; border-radius: 12px; }
+  .home-hero h1 { font-size: 27px; }
+  .home-hero-copy > p:not(.eyebrow) { font-size: 10px; line-height: 1.5; }
+  .home-hero-art { width: 92px; height: 92px; }
+  .home-hero-art > strong { font-size: 45px; }
+  .home-hero-art > span { top: 6px; right: 10px; font-size: 16px; }
+  .recommendations { padding-top: 25px; }
+  .recommendations .section-heading h2 { font-size: 20px; }
+  .recommendations .section-heading { gap: 8px; }
+  .text-link { font-size: 9px; white-space: nowrap; }
   .stats-page { padding: 23px 14px 55px; }
   .stats-heading { align-items: start; flex-direction: column; }
   .stats-heading h1 { font-size: 24px; }
@@ -223,5 +264,7 @@ footer small { font-size: 9px; }
   .product-title { font-size: 12px; }
   .product-price { font-size: 15px; }
   .product-description { min-height: 50px; font-size: 10px; }
+  .pagination { gap: 9px; padding-top: 25px; font-size: 10px; }
+  .page-button { min-width: 91px; padding: 9px 7px; font-size: 10px; }
   .cart-drawer { padding: 25px 21px; }
 }

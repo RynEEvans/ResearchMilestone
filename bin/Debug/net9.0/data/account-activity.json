@@ -1,1 +1,56 @@
-[]
+[
+  {
+    "id": "b766cca6-057f-4b32-88c0-ed7340d3817e",
+    "productId": 1,
+    "productName": "Wireless Headphones",
+    "productIcon": "\uD83C\uDFA7",
+    "unitPrice": 79.99,
+    "quantity": 1,
+    "addedAt": "2026-10-09T00:43:46.2537914+00:00"
+  },
+  {
+    "id": "ed81e9a4-492c-4240-b865-1dfc1f9edd9c",
+    "productId": 6,
+    "productName": "Cotton Throw Blanket",
+    "productIcon": "\uD83E\uDDF6",
+    "unitPrice": 39.0,
+    "quantity": 1,
+    "addedAt": "2026-10-09T00:43:48.6749389+00:00"
+  },
+  {
+    "id": "99c4df56-1bb2-4c2e-87fa-085b34316a98",
+    "productId": 20,
+    "productName": "Stoneware Dinner Set",
+    "productIcon": "\uD83C\uDF7D\uFE0F",
+    "unitPrice": 68.0,
+    "quantity": 1,
+    "addedAt": "2026-10-09T00:43:51.2414377+00:00"
+  },
+  {
+    "id": "23727c79-f6b2-4016-b2a2-c35e508b65a5",
+    "productId": 13,
+    "productName": "Everyday Running Shoes",
+    "productIcon": "\uD83D\uDC5F",
+    "unitPrice": 74.95,
+    "quantity": 1,
+    "addedAt": "2026-10-09T00:43:55.6289216+00:00"
+  },
+  {
+    "id": "fa4d4856-b276-4001-8848-bc41675e891c",
+    "productId": 41,
+    "productName": "Core Exercise Ball",
+    "productIcon": "???",
+    "unitPrice": 23.75,
+    "quantity": 1,
+    "addedAt": "2026-10-09T00:43:59.6395151+00:00"
+  },
+  {
+    "id": "f8cd8a0b-2bd6-41e5-95c1-dcba3cf3ccaf",
+    "productId": 15,
+    "productName": "Resistance Band Set",
+    "productIcon": "\uD83C\uDFCB\uFE0F",
+    "unitPrice": 19.95,
+    "quantity": 1,
+    "addedAt": "2026-10-09T00:44:16.1985975+00:00"
+  }
+]

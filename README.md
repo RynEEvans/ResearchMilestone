@@ -15,6 +15,8 @@ Open the local URL printed by `dotnet run`. The same app serves the storefront a
 ## Included
 
 - Product catalog stored in `data/products.json`, with parent/subcategory filters, keyword search, and sorting
+- Home screen with account-interest-based product recommendations and a general category mix for new accounts
+- Shop catalog paginated to 16 products per page
 - Per-browser shopping cart with add, remove, clear, quantity, and subtotal
 - Built-in Cappy Demo account (no login) with persistent cart-add history in `data/account-activity.json`
 - Persistent category, subcategory, and product click tracking with an account stats page and category pie chart

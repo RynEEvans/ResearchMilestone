@@ -1,51 +1,72 @@
 [
   {
-    "id": "e4485660-dd15-4d0b-aea6-2a582ad8c993",
+    "id": "d6334efd-34bb-420c-bb1e-d7d6d0cf6abb",
     "category": "Tech",
     "subcategory": "Audio",
     "source": "product",
-    "clickedAt": "2026-10-09T00:43:46.2664199+00:00"
+    "clickedAt": "2026-10-09T00:54:53.4558527+00:00"
   },
   {
-    "id": "d8366cec-557c-425a-afd6-f2e138ca8430",
-    "category": "Home",
-    "subcategory": "Textiles",
-    "source": "product",
-    "clickedAt": "2026-10-09T00:43:48.6782783+00:00"
-  },
-  {
-    "id": "c550aab0-70f6-47ab-aa9f-c2ab016765fb",
-    "category": "Home",
-    "subcategory": "Dining",
-    "source": "product",
-    "clickedAt": "2026-10-09T00:43:51.2436899+00:00"
-  },
-  {
-    "id": "8180b9b7-5a5f-43fa-b3bb-ada5355eb88f",
-    "category": "Fitness",
+    "id": "93b4c1e6-df8f-4ae4-ae2b-a46d6df94542",
+    "category": "Tech",
     "subcategory": null,
     "source": "category",
-    "clickedAt": "2026-10-09T00:43:53.8587432+00:00"
+    "clickedAt": "2026-10-09T00:54:57.7070753+00:00"
   },
   {
-    "id": "f0a10a5c-b1ea-4a7d-875c-f89048b80401",
-    "category": "Fitness",
-    "subcategory": "Footwear",
+    "id": "e550d530-b68f-4156-85a2-24ff02dd90ca",
+    "category": "Tech",
+    "subcategory": "Wearables",
     "source": "product",
-    "clickedAt": "2026-10-09T00:43:55.6320753+00:00"
+    "clickedAt": "2026-10-09T00:54:59.7361872+00:00"
   },
   {
-    "id": "359a0880-b248-4fdb-ae38-e31380fcb067",
-    "category": "Fitness",
-    "subcategory": "Training",
+    "id": "47dbcf11-5f65-430a-95fd-e5f9712e6abe",
+    "category": "Tech",
+    "subcategory": "Accessories",
     "source": "product",
-    "clickedAt": "2026-10-09T00:43:59.6428323+00:00"
+    "clickedAt": "2026-10-09T00:55:01.9395291+00:00"
   },
   {
-    "id": "ef98ad68-d131-4d9b-9929-8cd5557868ac",
-    "category": "Fitness",
-    "subcategory": "Training",
+    "id": "930169a6-1c34-4279-b5e9-20d169d35bf9",
+    "category": "Tech",
+    "subcategory": "Computing",
     "source": "product",
-    "clickedAt": "2026-10-09T00:44:16.2014494+00:00"
+    "clickedAt": "2026-10-09T00:55:03.4489605+00:00"
+  },
+  {
+    "id": "b9390ac6-f5c3-47fc-97ab-6fbb8904c656",
+    "category": "Home",
+    "subcategory": null,
+    "source": "category",
+    "clickedAt": "2026-10-09T00:55:19.9706284+00:00"
+  },
+  {
+    "id": "19b38f9a-7dd4-463f-b7f8-a7ab9a1f9584",
+    "category": "Home",
+    "subcategory": "Cups/Mugs",
+    "source": "product",
+    "clickedAt": "2026-10-09T00:55:21.4738467+00:00"
+  },
+  {
+    "id": "e10c7123-e0df-4f01-b9d8-f041f6652694",
+    "category": "Home",
+    "subcategory": "Decor",
+    "source": "product",
+    "clickedAt": "2026-10-09T00:55:23.7642968+00:00"
+  },
+  {
+    "id": "9aac84e3-b422-4d81-9371-ca159b47ed85",
+    "category": "Home",
+    "subcategory": "Decor",
+    "source": "product",
+    "clickedAt": "2026-10-09T00:55:25.0549092+00:00"
+  },
+  {
+    "id": "d9b26a10-0bcf-4745-9c72-a6467395e090",
+    "category": "Home",
+    "subcategory": null,
+    "source": "category",
+    "clickedAt": "2026-10-09T00:58:01.1656654+00:00"
   }
 ]

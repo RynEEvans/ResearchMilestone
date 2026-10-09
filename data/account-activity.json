@@ -1,56 +1,65 @@
 [
   {
-    "id": "b766cca6-057f-4b32-88c0-ed7340d3817e",
+    "id": "739ae30b-0608-4ffc-b720-4f7b77f4bbb0",
     "productId": 1,
     "productName": "Wireless Headphones",
     "productIcon": "\uD83C\uDFA7",
     "unitPrice": 79.99,
     "quantity": 1,
-    "addedAt": "2026-10-09T00:43:46.2537914+00:00"
+    "addedAt": "2026-10-09T00:54:53.4472038+00:00"
   },
   {
-    "id": "ed81e9a4-492c-4240-b865-1dfc1f9edd9c",
-    "productId": 6,
-    "productName": "Cotton Throw Blanket",
-    "productIcon": "\uD83E\uDDF6",
-    "unitPrice": 39.0,
+    "id": "b7e4a7bd-f45d-4383-af6d-03afc4d80ba0",
+    "productId": 5,
+    "productName": "Smart Fitness Watch",
+    "productIcon": "\u231A",
+    "unitPrice": 119.0,
     "quantity": 1,
-    "addedAt": "2026-10-09T00:43:48.6749389+00:00"
+    "addedAt": "2026-10-09T00:54:59.7331228+00:00"
   },
   {
-    "id": "99c4df56-1bb2-4c2e-87fa-085b34316a98",
-    "productId": 20,
-    "productName": "Stoneware Dinner Set",
-    "productIcon": "\uD83C\uDF7D\uFE0F",
-    "unitPrice": 68.0,
+    "id": "00f4b513-a546-4035-8337-2d19c4a56031",
+    "productId": 9,
+    "productName": "USB-C Fast Charger",
+    "productIcon": "\uD83D\uDD0C",
+    "unitPrice": 29.99,
     "quantity": 1,
-    "addedAt": "2026-10-09T00:43:51.2414377+00:00"
+    "addedAt": "2026-10-09T00:55:01.9371723+00:00"
   },
   {
-    "id": "23727c79-f6b2-4016-b2a2-c35e508b65a5",
-    "productId": 13,
-    "productName": "Everyday Running Shoes",
-    "productIcon": "\uD83D\uDC5F",
-    "unitPrice": 74.95,
+    "id": "a4295992-3ac0-4176-b70e-fbc13320c339",
+    "productId": 10,
+    "productName": "Wireless Mouse",
+    "productIcon": "\uD83D\uDDB1\uFE0F",
+    "unitPrice": 27.5,
     "quantity": 1,
-    "addedAt": "2026-10-09T00:43:55.6289216+00:00"
+    "addedAt": "2026-10-09T00:55:03.4460782+00:00"
   },
   {
-    "id": "fa4d4856-b276-4001-8848-bc41675e891c",
-    "productId": 41,
-    "productName": "Core Exercise Ball",
-    "productIcon": "???",
-    "unitPrice": 23.75,
+    "id": "27c8ce98-4ab0-4318-a9c9-cb96977037de",
+    "productId": 3,
+    "productName": "Insulated Travel Mug",
+    "productIcon": "\u2615",
+    "unitPrice": 24.95,
     "quantity": 1,
-    "addedAt": "2026-10-09T00:43:59.6395151+00:00"
+    "addedAt": "2026-10-09T00:55:21.4709968+00:00"
   },
   {
-    "id": "f8cd8a0b-2bd6-41e5-95c1-dcba3cf3ccaf",
-    "productId": 15,
-    "productName": "Resistance Band Set",
-    "productIcon": "\uD83C\uDFCB\uFE0F",
-    "unitPrice": 19.95,
+    "id": "e7f33fd1-87cd-4cf8-8030-0cac824f4684",
+    "productId": 8,
+    "productName": "Ceramic Plant Pot",
+    "productIcon": "\uD83E\uDEB4",
+    "unitPrice": 18.5,
     "quantity": 1,
-    "addedAt": "2026-10-09T00:44:16.1985975+00:00"
+    "addedAt": "2026-10-09T00:55:23.7621612+00:00"
+  },
+  {
+    "id": "49823d53-ec99-4968-ac70-a7512f611c0e",
+    "productId": 21,
+    "productName": "Cedar \u0026 Citrus Candle",
+    "productIcon": "\uD83D\uDD6F\uFE0F",
+    "unitPrice": 21.0,
+    "quantity": 1,
+    "addedAt": "2026-10-09T00:55:25.0514861+00:00"
   }
 ]

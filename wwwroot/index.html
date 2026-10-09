@@ -17,9 +17,8 @@
       <button type="submit" aria-label="Search products">AI</button>
     </form>
     <nav class="main-nav" aria-label="Main navigation">
-      <a href="#shop">Offers</a>
-      <a href="#shop">Rewards</a>
-      <a href="#shop">Orders</a>
+      <button type="button" id="home-toggle" class="nav-button" aria-current="page">Home</button>
+      <button type="button" id="shop-toggle" class="nav-button">Shop</button>
     </nav>
     <button type="button" id="stats-toggle" class="nav-button">Stats</button>
     <button class="account-button" id="account-toggle" type="button" aria-label="View Cappy Demo account">
@@ -36,7 +35,26 @@
   </nav>
 
   <main>
-    <section class="shop-section" id="shop" aria-labelledby="shop-title">
+    <section id="home-page" class="home-page" aria-labelledby="home-title">
+      <div class="home-hero">
+        <div class="home-hero-copy">
+          <p class="eyebrow">A little more you, every day</p>
+          <h1 id="home-title">Welcome to Retail Genie</h1>
+          <p id="recommendation-intro">Discover thoughtful picks for your home, your routine, and everywhere you’re headed.</p>
+          <button type="button" class="home-shop-button" id="home-shop-button">Explore all products <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="home-hero-art" aria-hidden="true"><span>✦</span><strong>🛍️</strong></div>
+      </div>
+      <section class="recommendations" aria-labelledby="recommendations-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">Picked for Cappy Demo</p><h2 id="recommendations-title">Recommended for you</h2></div>
+          <button type="button" class="text-link" id="recommendations-shop-button">Shop everything <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="product-grid" id="recommendation-grid"></div>
+      </section>
+    </section>
+
+    <section class="shop-section" id="shop-page" aria-labelledby="shop-title" hidden>
       <div class="section-heading">
         <div><h1 id="shop-title">Find your next favorite</h1><p class="shop-intro">Thoughtful everyday picks, all in one place.</p></div>
         <label class="sort-label" for="sort-select">Sort by
@@ -56,6 +74,11 @@
             <span aria-hidden="true">🔎</span><h3>No finds just yet</h3>
             <p>Try a different search or choose another category.</p>
           </div>
+          <nav class="pagination" id="pagination" aria-label="Product pages" hidden>
+            <button type="button" id="previous-page" class="page-button">← Previous</button>
+            <span id="page-status" aria-live="polite"></span>
+            <button type="button" id="next-page" class="page-button">Next →</button>
+          </nav>
         </div>
       </div>
     </section>

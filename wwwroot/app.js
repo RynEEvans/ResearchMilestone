@@ -3,8 +3,10 @@ const categoryList = document.querySelector("#category-list");
 const searchForm = document.querySelector("#search-form");
 const searchInput = document.querySelector("#search-input");
 const sortSelect = document.querySelector("#sort-select");
-const shopPage = document.querySelector("#shop");
+const homePage = document.querySelector("#home-page");
+const shopPage = document.querySelector("#shop-page");
 const statsPage = document.querySelector("#stats-page");
+const recommendationGrid = document.querySelector("#recommendation-grid");
 const browseBar = document.querySelector(".browse-bar");
 const statsToggle = document.querySelector("#stats-toggle");
 const resultsLabel = document.querySelector("#results-label");
@@ -19,7 +21,8 @@ const cartEmpty = document.querySelector("#cart-empty");
 const cartSummary = document.querySelector("#cart-summary");
 const toast = document.querySelector("#toast");
 
-const state = { category: "All", subcategory: "", search: "" };
+const state = { category: "All", subcategory: "", search: "", page: 1, products: [], view: "home" };
+const productsPerPage = 16;
 const money = amount => new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(amount);
 
 async function api(url, options = {}) {
@@ -66,8 +69,9 @@ async function loadCategories() {
       }
       state.category = category.name;
       state.subcategory = "";
+      state.page = 1;
+      setPage("shop");
       loadCategories().catch(showError);
-      loadProducts().catch(showError);
     });
     categoryList.append(button);
 
@@ -81,8 +85,9 @@ async function loadCategories() {
         subcategoryButton.addEventListener("click", () => {
           trackCategoryClick(category.name, subcategory).catch(showError);
           state.subcategory = state.subcategory === subcategory ? "" : subcategory;
+          state.page = 1;
+          setPage("shop");
           loadCategories().catch(showError);
-          loadProducts().catch(showError);
         });
         categoryList.append(subcategoryButton);
       });
@@ -101,71 +106,150 @@ async function trackProductClick(productId) {
   await api(`/api/account/product-clicks/${productId}`, { method: "POST" });
 }
 
+function createProductCard(product) {
+  const card = document.createElement("article");
+  card.className = "product-card";
+  const visual = document.createElement("button");
+  visual.type = "button";
+  visual.className = "product-visual";
+  visual.setAttribute("aria-label", `View ${product.name}`);
+  visual.addEventListener("click", () => trackProductClick(product.id).catch(showError));
+  visual.style.backgroundColor = ["#f4f7f4", "#edf2ee", "#f1f5f1", "#e9f0eb"][product.id % 4];
+  const category = document.createElement("span");
+  category.className = "product-category";
+  category.textContent = `${product.category} · ${product.subcategory}`;
+  const icon = document.createElement("span");
+  icon.className = "product-icon";
+  icon.setAttribute("aria-hidden", "true");
+  icon.textContent = product.icon;
+  visual.append(category, icon);
+
+  const details = document.createElement("div");
+  details.className = "product-details";
+  const titleRow = document.createElement("div");
+  titleRow.className = "product-title-row";
+  const title = document.createElement("button");
+  title.type = "button";
+  title.className = "product-title-button";
+  title.setAttribute("aria-label", `View ${product.name}`);
+  title.textContent = product.name;
+  title.addEventListener("click", () => trackProductClick(product.id).catch(showError));
+  const titleHeading = document.createElement("h3");
+  titleHeading.className = "product-title";
+  titleHeading.append(title);
+  const price = document.createElement("span");
+  price.className = "product-price";
+  price.textContent = money(product.price);
+  titleRow.append(titleHeading, price);
+  const rating = document.createElement("p");
+  rating.className = "rating";
+  rating.textContent = `★ ${product.rating.toFixed(1)}`;
+  const reviewCount = document.createElement("span");
+  reviewCount.textContent = `(${product.reviewCount})`;
+  rating.append(reviewCount);
+  const description = document.createElement("p");
+  description.className = "product-description";
+  description.textContent = product.description;
+  const addButton = document.createElement("button");
+  addButton.type = "button";
+  addButton.className = "add-button";
+  addButton.textContent = "Add to cart";
+  addButton.addEventListener("click", () => addToCart(product.id));
+  details.append(titleRow, rating, description, addButton);
+  card.append(visual, details);
+  return card;
+}
+
+function renderShopPage() {
+  productGrid.replaceChildren();
+  const start = (state.page - 1) * productsPerPage;
+  const pageProducts = state.products.slice(start, start + productsPerPage);
+  const pageCount = Math.ceil(state.products.length / productsPerPage);
+  resultsLabel.textContent = state.products.length
+    ? `Showing ${start + 1}–${Math.min(start + productsPerPage, state.products.length)} of ${state.products.length} items`
+    : "0 items";
+  emptyState.hidden = state.products.length !== 0;
+  productGrid.hidden = state.products.length === 0;
+  pageProducts.forEach(product => productGrid.append(createProductCard(product)));
+
+  const pagination = document.querySelector("#pagination");
+  pagination.hidden = pageCount <= 1;
+  document.querySelector("#previous-page").disabled = state.page <= 1;
+  document.querySelector("#next-page").disabled = state.page >= pageCount;
+  document.querySelector("#page-status").textContent = `Page ${state.page} of ${pageCount}`;
+}
+
 async function loadProducts() {
   const params = new URLSearchParams();
   if (state.search) params.set("search", state.search);
   if (state.category !== "All") params.set("category", state.category);
   if (state.subcategory) params.set("subcategory", state.subcategory);
   if (sortSelect.value !== "featured") params.set("sort", sortSelect.value);
-  const products = await api(`/api/products?${params}`);
-  productGrid.replaceChildren();
-  resultsLabel.textContent = `${products.length} ${products.length === 1 ? "item" : "items"} to make your day`;
-  emptyState.hidden = products.length !== 0;
-  productGrid.hidden = products.length === 0;
+  state.products = await api(`/api/products?${params}`);
+  const pageCount = Math.max(1, Math.ceil(state.products.length / productsPerPage));
+  state.page = Math.min(state.page, pageCount);
+  renderShopPage();
+}
 
+function getMixedRecommendations(products, limit) {
+  const grouped = new Map();
   products.forEach(product => {
-    const card = document.createElement("article");
-    card.className = "product-card";
-    const visual = document.createElement("button");
-    visual.type = "button";
-    visual.className = "product-visual";
-    visual.setAttribute("aria-label", `View ${product.name}`);
-    visual.addEventListener("click", () => trackProductClick(product.id).catch(showError));
-    visual.style.backgroundColor = ["#f4f7f4", "#edf2ee", "#f1f5f1", "#e9f0eb"][product.id % 4];
-    const category = document.createElement("span");
-    category.className = "product-category";
-    category.textContent = `${product.category} · ${product.subcategory}`;
-    const icon = document.createElement("span");
-    icon.className = "product-icon";
-    icon.setAttribute("aria-hidden", "true");
-    icon.textContent = product.icon;
-    visual.append(category, icon);
-
-    const details = document.createElement("div");
-    details.className = "product-details";
-    const titleRow = document.createElement("div");
-    titleRow.className = "product-title-row";
-    const title = document.createElement("button");
-    title.type = "button";
-    title.className = "product-title-button";
-    title.setAttribute("aria-label", `View ${product.name}`);
-    title.textContent = product.name;
-    title.addEventListener("click", () => trackProductClick(product.id).catch(showError));
-    const titleHeading = document.createElement("h3");
-    titleHeading.className = "product-title";
-    titleHeading.append(title);
-    const price = document.createElement("span");
-    price.className = "product-price";
-    price.textContent = money(product.price);
-    titleRow.append(titleHeading, price);
-    const rating = document.createElement("p");
-    rating.className = "rating";
-    rating.textContent = `★ ${product.rating.toFixed(1)}`;
-    const reviewCount = document.createElement("span");
-    reviewCount.textContent = `(${product.reviewCount})`;
-    rating.append(reviewCount);
-    const description = document.createElement("p");
-    description.className = "product-description";
-    description.textContent = product.description;
-    const addButton = document.createElement("button");
-    addButton.type = "button";
-    addButton.className = "add-button";
-    addButton.textContent = "Add to cart";
-    addButton.addEventListener("click", () => addToCart(product.id));
-    details.append(titleRow, rating, description, addButton);
-    card.append(visual, details);
-    productGrid.append(card);
+    const categoryProducts = grouped.get(product.category) || [];
+    categoryProducts.push(product);
+    grouped.set(product.category, categoryProducts);
   });
+  const groups = [...grouped.values()];
+  const mixed = [];
+  for (let index = 0; mixed.length < limit; index += 1) {
+    let added = false;
+    groups.forEach(group => {
+      if (group[index] && mixed.length < limit) {
+        mixed.push(group[index]);
+        added = true;
+      }
+    });
+    if (!added) break;
+  }
+  return mixed;
+}
+
+async function loadHomeRecommendations() {
+  const [products, stats] = await Promise.all([
+    api("/api/products"),
+    api("/api/account/stats")
+  ]);
+  const engagedCategories = stats.categories
+    .filter(category => category.totalClicks > 0)
+    .sort((left, right) => right.totalClicks - left.totalClicks);
+  let recommended;
+  if (engagedCategories.length === 0) {
+    recommended = getMixedRecommendations(products, 8);
+    document.querySelector("#recommendation-intro").textContent =
+      "A little bit of everything, picked to help you find a new favorite.";
+  } else {
+    const byCategory = new Map(engagedCategories.map(category => [
+      category.name,
+      products.filter(product => product.category === category.name)
+        .sort((left, right) => right.rating - left.rating || left.id - right.id)
+    ]));
+    recommended = [];
+    for (let index = 0; recommended.length < 8; index += 1) {
+      let added = false;
+      engagedCategories.forEach(category => {
+        const product = byCategory.get(category.name)?.[index];
+        if (product && recommended.length < 8) {
+          recommended.push(product);
+          added = true;
+        }
+      });
+      if (!added) break;
+    }
+    document.querySelector("#recommendation-intro").textContent =
+      `Based on the categories you’ve been exploring, here are a few picks for you.`;
+  }
+
+  recommendationGrid.replaceChildren();
+  recommended.forEach(product => recommendationGrid.append(createProductCard(product)));
 }
 
 async function loadStats() {
@@ -377,25 +461,63 @@ function setAccountOpen(open) {
   }
 }
 
-function setStatsPage(open) {
-  shopPage.hidden = open;
-  statsPage.hidden = !open;
-  browseBar.hidden = open;
-  statsToggle.textContent = open ? "Shop" : "Stats";
-  if (open) loadStats().catch(showError);
+function setPage(view) {
+  state.view = view;
+  homePage.hidden = view !== "home";
+  shopPage.hidden = view !== "shop";
+  statsPage.hidden = view !== "stats";
+  browseBar.hidden = view === "stats";
+  statsToggle.textContent = view === "stats" ? "Back" : "Stats";
+  document.querySelector("#home-toggle").setAttribute("aria-current", String(view === "home"));
+  document.querySelector("#shop-toggle").setAttribute("aria-current", String(view === "shop"));
+
+  if (view === "home") loadHomeRecommendations().catch(showError);
+  if (view === "shop") loadProducts().catch(showError);
+  if (view === "stats") loadStats().catch(showError);
 }
 
 searchForm.addEventListener("submit", event => {
   event.preventDefault();
   state.search = searchInput.value.trim();
-  loadProducts().catch(showError);
+  state.page = 1;
+  setPage("shop");
 });
 searchInput.addEventListener("search", () => {
   state.search = searchInput.value.trim();
+  state.page = 1;
+  setPage("shop");
+});
+sortSelect.addEventListener("change", () => {
+  state.page = 1;
   loadProducts().catch(showError);
 });
-sortSelect.addEventListener("change", () => loadProducts().catch(showError));
-statsToggle.addEventListener("click", () => setStatsPage(statsPage.hidden));
+document.querySelector("#home-toggle").addEventListener("click", () => setPage("home"));
+document.querySelector("#shop-toggle").addEventListener("click", () => setPage("shop"));
+document.querySelector("#home-shop-button").addEventListener("click", () => setPage("shop"));
+document.querySelector("#recommendations-shop-button").addEventListener("click", () => setPage("shop"));
+statsToggle.addEventListener("click", () => {
+  if (state.view === "stats") {
+    setPage(state.previousView || "home");
+  } else {
+    state.previousView = state.view;
+    setPage("stats");
+  }
+});
+document.querySelector("#previous-page").addEventListener("click", () => {
+  if (state.page > 1) {
+    state.page -= 1;
+    renderShopPage();
+    shopPage.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+});
+document.querySelector("#next-page").addEventListener("click", () => {
+  const pageCount = Math.ceil(state.products.length / productsPerPage);
+  if (state.page < pageCount) {
+    state.page += 1;
+    renderShopPage();
+    shopPage.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+});
 document.querySelector("#cart-toggle").addEventListener("click", () => setCartOpen(true));
 document.querySelector("#account-toggle").addEventListener("click", () => setAccountOpen(true));
 document.querySelector("#cart-close").addEventListener("click", () => setCartOpen(false));
@@ -433,4 +555,4 @@ document.querySelector("#reset-data").addEventListener("click", async () => {
 });
 document.querySelector("#checkout-button").addEventListener("click", () => showToast("Checkout is coming soon."));
 
-Promise.all([loadCategories(), loadProducts(), refreshCart()]).catch(showError);
+Promise.all([loadCategories(), loadHomeRecommendations(), refreshCart()]).catch(showError);
