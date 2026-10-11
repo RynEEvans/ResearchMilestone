@@ -117,5 +117,12 @@
     "subcategory": "Computing",
     "source": "purchase",
     "clickedAt": "2026-10-09T01:49:20.4179315+00:00"
+  },
+  {
+    "id": "bcb0fcf9-bbd8-414c-a883-ae2178eeca30",
+    "category": "Beauty",
+    "subcategory": null,
+    "source": "category",
+    "clickedAt": "2026-10-09T03:00:46.6437794+00:00"
   }
 ]
