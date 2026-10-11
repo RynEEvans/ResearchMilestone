@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ResearchMilestone")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4da2083607b83bf86504fd945e5abc7d0ccc7671")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6e22b0ea4ed3c86ce946f06b8c46b2ead919d40f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ResearchMilestone")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ResearchMilestone")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

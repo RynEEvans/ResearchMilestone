@@ -98,3 +98,14 @@ C:\Users\bluef\AppData\Local\Temp\RetailGenie-bogo-build\ResearchMilestone.dll
 C:\Users\bluef\AppData\Local\Temp\RetailGenie-bogo-build\ResearchMilestone.pdb
 C:\Users\bluef\OneDrive\Documents\GitHub\ResearchMilestone\obj\Debug\net9.0\compressed\hadrox98xa-nhq6x6ynlk.gz
 C:\Users\bluef\OneDrive\Documents\GitHub\ResearchMilestone\obj\Debug\net9.0\compressed\kirdg19kml-4h3hqtcqc5.gz
+C:\Users\bluef\AppData\Local\Temp\RetailGenie-icons-build\data\account-activity.json
+C:\Users\bluef\AppData\Local\Temp\RetailGenie-icons-build\data\category-activity.json
+C:\Users\bluef\AppData\Local\Temp\RetailGenie-icons-build\data\orders.json
+C:\Users\bluef\AppData\Local\Temp\RetailGenie-icons-build\data\products.json
+C:\Users\bluef\AppData\Local\Temp\RetailGenie-icons-build\ResearchMilestone.staticwebassets.runtime.json
+C:\Users\bluef\AppData\Local\Temp\RetailGenie-icons-build\ResearchMilestone.staticwebassets.endpoints.json
+C:\Users\bluef\AppData\Local\Temp\RetailGenie-icons-build\ResearchMilestone.exe
+C:\Users\bluef\AppData\Local\Temp\RetailGenie-icons-build\ResearchMilestone.deps.json
+C:\Users\bluef\AppData\Local\Temp\RetailGenie-icons-build\ResearchMilestone.runtimeconfig.json
+C:\Users\bluef\AppData\Local\Temp\RetailGenie-icons-build\ResearchMilestone.dll
+C:\Users\bluef\AppData\Local\Temp\RetailGenie-icons-build\ResearchMilestone.pdb

@@ -34,5 +34,50 @@
     "unitPrice": 119.0,
     "quantity": 1,
     "addedAt": "2026-10-09T01:36:11.7307451+00:00"
+  },
+  {
+    "id": "522c3359-2918-4c63-88e3-a36f5494f3c6",
+    "productId": 6,
+    "productName": "Cotton Throw Blanket",
+    "productIcon": "\uD83E\uDDF6",
+    "unitPrice": 39.0,
+    "quantity": 1,
+    "addedAt": "2026-10-09T01:48:06.2048455+00:00"
+  },
+  {
+    "id": "2b095da2-7ccc-402f-a59b-6b3cf577a167",
+    "productId": 104,
+    "productName": "Canvas Weekend Tote",
+    "productIcon": "??",
+    "unitPrice": 32.0,
+    "quantity": 1,
+    "addedAt": "2026-10-09T01:48:09.3366401+00:00"
+  },
+  {
+    "id": "99f90fba-8dc3-4bfe-bec0-77588ee9c6c4",
+    "productId": 1,
+    "productName": "Wireless Headphones",
+    "productIcon": "\uD83C\uDFA7",
+    "unitPrice": 79.99,
+    "quantity": 1,
+    "addedAt": "2026-10-09T01:48:14.502534+00:00"
+  },
+  {
+    "id": "91a951da-7ec9-4879-bcb9-97673516cac4",
+    "productId": 9,
+    "productName": "USB-C Fast Charger",
+    "productIcon": "\uD83D\uDD0C",
+    "unitPrice": 29.99,
+    "quantity": 1,
+    "addedAt": "2026-10-09T01:48:16.2053523+00:00"
+  },
+  {
+    "id": "f235fc46-0686-473b-9eb3-a01ebc90058f",
+    "productId": 10,
+    "productName": "Wireless Mouse",
+    "productIcon": "\uD83D\uDDB1\uFE0F",
+    "unitPrice": 27.5,
+    "quantity": 1,
+    "addedAt": "2026-10-09T01:48:18.7344403+00:00"
   }
 ]

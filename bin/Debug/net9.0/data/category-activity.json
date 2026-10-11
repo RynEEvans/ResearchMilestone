@@ -33,5 +33,89 @@
     "subcategory": "Wearables",
     "source": "product",
     "clickedAt": "2026-10-09T01:36:11.7325533+00:00"
+  },
+  {
+    "id": "0a4fa42a-bb65-405e-abfa-f484e809d52e",
+    "category": "Home",
+    "subcategory": "Textiles",
+    "source": "cart-add",
+    "clickedAt": "2026-10-09T01:48:06.2150312+00:00"
+  },
+  {
+    "id": "672730d6-62b9-4cc2-bf70-91a96e4f8068",
+    "category": "Travel",
+    "subcategory": "Bags \u0026 Backpacks",
+    "source": "cart-add",
+    "clickedAt": "2026-10-09T01:48:09.3390935+00:00"
+  },
+  {
+    "id": "63aa72d4-fbca-4725-a5d6-8ef7b1cc5d64",
+    "category": "Tech",
+    "subcategory": null,
+    "source": "category",
+    "clickedAt": "2026-10-09T01:48:12.9320439+00:00"
+  },
+  {
+    "id": "877dcf6f-a8ef-4a05-8e32-6b7b8d8e6c45",
+    "category": "Tech",
+    "subcategory": "Audio",
+    "source": "cart-add",
+    "clickedAt": "2026-10-09T01:48:14.5046356+00:00"
+  },
+  {
+    "id": "2076f184-19f7-4ee2-a690-1c3755323ab8",
+    "category": "Tech",
+    "subcategory": "Accessories",
+    "source": "cart-add",
+    "clickedAt": "2026-10-09T01:48:16.2076687+00:00"
+  },
+  {
+    "id": "39fc92f8-e9d9-495e-8be6-43c40393839f",
+    "category": "Tech",
+    "subcategory": "Computing",
+    "source": "cart-add",
+    "clickedAt": "2026-10-09T01:48:18.7368882+00:00"
+  },
+  {
+    "id": "7f27943e-e6c8-42f6-b74d-f21409578686",
+    "category": "Home",
+    "subcategory": "Textiles",
+    "source": "product-view",
+    "clickedAt": "2026-10-09T01:48:25.3199815+00:00"
+  },
+  {
+    "id": "2584bb2c-e18c-4ae5-b5ee-d849f36b022a",
+    "category": "Home",
+    "subcategory": "Textiles",
+    "source": "purchase",
+    "clickedAt": "2026-10-09T01:49:20.3550778+00:00"
+  },
+  {
+    "id": "f6ca5f69-2e91-4e98-805e-b3f4bd6ea55c",
+    "category": "Travel",
+    "subcategory": "Bags \u0026 Backpacks",
+    "source": "purchase",
+    "clickedAt": "2026-10-09T01:49:20.3714412+00:00"
+  },
+  {
+    "id": "090bf907-e28c-4239-8b21-0cd3bdbc3a61",
+    "category": "Tech",
+    "subcategory": "Audio",
+    "source": "purchase",
+    "clickedAt": "2026-10-09T01:49:20.384013+00:00"
+  },
+  {
+    "id": "cb709d22-d036-468b-af07-9b8fb7b980b0",
+    "category": "Tech",
+    "subcategory": "Accessories",
+    "source": "purchase",
+    "clickedAt": "2026-10-09T01:49:20.4004769+00:00"
+  },
+  {
+    "id": "b772544e-244c-478a-b6bf-7a719a486e5f",
+    "category": "Tech",
+    "subcategory": "Computing",
+    "source": "purchase",
+    "clickedAt": "2026-10-09T01:49:20.4179315+00:00"
   }
 ]
